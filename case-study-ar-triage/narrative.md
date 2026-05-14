@@ -52,7 +52,9 @@ _Target reader: RCM director / practice CFO / health system VP Revenue. Call to 
 
 - [ ] PDF version (gated download)
 - [ ] Architecture diagram (draw.io / excalidraw export)
-- [ ] LinkedIn post — long-form (in `linkedin-posts/`)
-- [ ] LinkedIn post — 2nd hit at +1 week (in `linkedin-posts/`)
+- [ ] LinkedIn post — long-form (drafted in `~/gravitas-marketing/`)
+- [ ] LinkedIn post — 2nd hit at +1 week (drafted in `~/gravitas-marketing/`)
 - [ ] Landing page with email gate
 - [ ] 6-min Loom walkthrough
+
+> LinkedIn drafts and all marketing posts live in `~/gravitas-marketing/`, not in this repo.
