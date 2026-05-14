@@ -2,6 +2,42 @@
 
 Repo-local instructions. Loaded automatically when Claude Code runs in this directory. Cross-project conventions (PractiCons tracker, Cognito flow, operator identity) live in `~/.claude/CLAUDE.md` — do NOT duplicate them here.
 
+## 💰 Value framing — time, effort, money
+
+Every case study, narrative, post, or buyer-facing story we write revolves around three outcomes: **save time, save human effort, save money.** Nothing else. People care about those three — not "elegant architecture," not "modern stack," not "AI-powered" as a feature.
+
+When drafting:
+- Lead with the time/effort/money outcome, not the technology.
+- The technology (Bedrock, RAG, agents) is the *how*, never the *what*.
+- Every claim needs a number — hours saved per week, FTE-equivalents freed, $ recovered, $ avoided.
+- "AI-powered" alone is not a value proposition. "Cuts denial-appeal drafting from 20 min to 2 min" is.
+
+If a draft drifts into stack-flexing or feature-listing, push back: "what's the time/effort/money number behind this?"
+
+## 💬 Conversation style — not a newsletter
+
+Karthik wants conversation, not walls of text. Keep responses tight.
+
+- **Default to short.** Most replies are 1-5 lines. A paragraph is fine; three paragraphs needs a reason.
+- **One question at a time when probing.** Don't stack 6 questions in a single message — ask the most load-bearing one, get the answer, proceed.
+- **No tables, headers, or bullet-lists unless the content actually needs structure.** A comparison of 4 options needs a table; a yes/no question doesn't.
+- **No "here's what I'll do" preambles.** Just do it (or ask the one thing blocking you).
+- **No closing summary of what was just said.** The user read it.
+- **Skip section headers in short replies.** `## What I did` for a 3-line answer is overkill.
+
+Long responses are reserved for: deliberate plan documents, file content being written, or when Karthik explicitly asks for depth. Default is terse.
+
+## 🧭 Before you do anything substantive — session-start protocol
+
+**This repo is anchored on a roadmap. Every session orients against the roadmap before engaging.** The protocol is a hard gate, not a suggestion — drift from the roadmap is the failure mode that wastes session time and scaffolds the wrong thing.
+
+1. **Read [`STUDY_LOG.md`](STUDY_LOG.md)** — the "Where we are right now" block at the top names the current week and current focus. Source of truth for *where we are*.
+2. **Read the matching section of [`docs/plans/001-roadmap.md`](docs/plans/001-roadmap.md)** — the week-range or cert-section STUDY_LOG points to. Source of truth for *what we should be doing*.
+3. **State orientation back to Karthik in one line** — *"You're in Week N per the roadmap, current focus is X. Continuing."* If STUDY_LOG is stale or the request doesn't match the current focus, surface the mismatch instead of silently doing what was asked.
+4. **Only then engage.**
+
+Trivial off-roadmap requests (typo fix, format a file, answer a quick factual question) skip the protocol — use judgment. If the work changes a study artifact or progresses a cert, run the protocol. Full rule lives in [`.claude/rules/planning.md`](.claude/rules/planning.md).
+
 ## Behavioral rules — read these first
 
 Three rules files live in `.claude/rules/` and apply to every session in this repo. Read them before doing substantive work:

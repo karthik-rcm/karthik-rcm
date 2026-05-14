@@ -21,7 +21,7 @@ This skill is **output-side** — testing. Pair with `/aiprof` (input/gathering)
 
 ## Project context
 
-!`echo "Repo: $(basename "$(git rev-parse --show-toplevel 2>/dev/null || pwd)")" && echo "Notes coverage:" && for cert in aif-c01 chp mla-c01; do count=$(find $cert/notes -maxdepth 2 -type f -name "*.md" 2>/dev/null | wc -l); echo "  $cert: $count notes file(s)"; done && echo "Most-recent practice attempts:" && (find aif-c01/practice-questions chp/practice-questions mla-c01/practice-questions -maxdepth 2 -type f -name "*.md" 2>/dev/null | sort -r | head -3) || true`
+!`echo "🧭 Where we are (from STUDY_LOG.md):" && grep -E "Current week|Current focus|Last updated" STUDY_LOG.md 2>/dev/null | head -3 || echo "  STUDY_LOG.md not found — run session-start protocol manually" && echo "" && echo "Repo: $(basename "$(git rev-parse --show-toplevel 2>/dev/null || pwd)")" && echo "Notes coverage:" && for cert in aif-c01 chp mla-c01; do count=$(find $cert/notes -maxdepth 2 -type f -name "*.md" 2>/dev/null | wc -l); echo "  $cert: $count notes file(s)"; done && echo "Most-recent practice attempts:" && (find aif-c01/practice-questions chp/practice-questions mla-c01/practice-questions -maxdepth 2 -type f -name "*.md" 2>/dev/null | sort -r | head -3) || true`
 
 ## How the skill runs
 

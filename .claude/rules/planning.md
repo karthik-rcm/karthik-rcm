@@ -2,6 +2,19 @@
 
 A 3-5 hr/week solo study effort doesn't need OKRs, sprints, story points, or epic emojis — that's ceremony for production software. But it does need explicit acceptance criteria, measurable outcomes, and no narrative mush. This file sets the shape.
 
+## Session-start protocol — MANDATORY before doing substantive work
+
+**Before engaging with any substantive request in this repo, follow this protocol. No exceptions.** This rule exists because drifting from the roadmap is the failure mode that wastes session time, scaffolds the wrong thing, and embarrasses everyone. The protocol is the gate against drift.
+
+1. **Read [`STUDY_LOG.md`](../../STUDY_LOG.md)** — specifically the "Where we are right now" block at the top. It names the current week and the current focus. This is the source of truth for *where in the journey we are*.
+2. **Read the matching section of [`docs/plans/001-roadmap.md`](../../docs/plans/001-roadmap.md)** — find the week-range or cert-section the STUDY_LOG points to. This is the source of truth for *what we're supposed to be doing*.
+3. **State the orientation back to Karthik in one line** before engaging — *"You're in Week 1-2 per the roadmap, current focus is the case-study deliverable, subject not yet picked. Continuing."* This makes the orientation visible so Karthik can correct it if STUDY_LOG is stale.
+4. **Only then engage with the request.**
+
+**When the user request doesn't match where we are** (e.g. Karthik asks for AIF-C01 study material in Week 1 when the roadmap says case study first), surface the mismatch rather than silently doing what was asked: *"Roadmap says Week 1-2 is the case study, not AIF-C01. Pulling forward intentionally, or did you mean to update the focus?"*
+
+**What does NOT need this protocol:** trivial off-roadmap requests (fix a typo, answer a quick factual question, explain a previous output, format a file). Use judgment — if the work changes a study artifact or progresses a cert, run the protocol. If it doesn't, skip it.
+
 ## The planning shape
 
 Every weekly study session, case-study deliverable, or cert milestone is structured as:

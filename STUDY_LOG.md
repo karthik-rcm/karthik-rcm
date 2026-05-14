@@ -2,9 +2,20 @@
 
 Weekly entries against [the roadmap](docs/plans/001-roadmap.md) — the 4-month AI healthcare certification plan.
 
+> **🧭 Where we are right now**
+>
+> | Field | Value |
+> |---|---|
+> | **Current week** | Pre-Week-1 (setup phase) |
+> | **Current focus** | W1 (May 16-22): raw-facts brain dump for **PractiApp Document Intelligence case study** (Bedrock-powered classification — AIF-C01-aligned). Output → `docs/drafts/case-study-raw-notes.md` |
+> | **Active month plan** | [docs/plans/002-month-1-case-study.md](docs/plans/002-month-1-case-study.md) |
+> | **Last updated** | 2026-05-15 |
+>
+> **This block is the source of truth for "where we are."** Every session must read this, then read the matching section of [docs/plans/001-roadmap.md](docs/plans/001-roadmap.md), *before* engaging with the request. Drift from the roadmap is the failure mode this gate prevents. Update this block at the end of each week (or whenever scope shifts).
+
 **Time budget:** 3-5 hrs/week (light — realistic alongside PractiCons workload)
 **Adjusted timeline:** ~28-32 weeks at this pace (vs. the 16-week target for 10 hrs/week)
-**Start date:** 2026-05-16 (Week 1 — AR Triage case study)
+**Start date:** 2026-05-16 (Week 1 begins — subject of case study TBD)
 
 ---
 

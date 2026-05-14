@@ -21,7 +21,7 @@ The skill is **input-side** — gathering. Pair it with `/brainstorm` (internali
 
 ## Project context
 
-!`echo "Repo: $(basename "$(git rev-parse --show-toplevel 2>/dev/null || pwd)")" && echo "Sources file:" && (test -f docs/sources.md && echo "  docs/sources.md present" || echo "  ⚠️  docs/sources.md MISSING — refuse to run") && echo "Existing notes:" && (find aif-c01/notes chp/notes mla-c01/notes -maxdepth 2 -type f -name "*.md" 2>/dev/null | head -5) || true`
+!`echo "🧭 Where we are (from STUDY_LOG.md):" && grep -E "Current week|Current focus|Last updated" STUDY_LOG.md 2>/dev/null | head -3 || echo "  STUDY_LOG.md not found — run session-start protocol manually" && echo "" && echo "Repo: $(basename "$(git rev-parse --show-toplevel 2>/dev/null || pwd)")" && echo "Sources file:" && (test -f docs/sources.md && echo "  docs/sources.md present" || echo "  ⚠️  docs/sources.md MISSING — refuse to run") && echo "Existing notes:" && (find aif-c01/notes chp/notes mla-c01/notes -maxdepth 2 -type f -name "*.md" 2>/dev/null | head -5) || true`
 
 ## Non-negotiables
 

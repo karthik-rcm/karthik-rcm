@@ -20,7 +20,7 @@ The skill runs an **adaptive Socratic discussion** through seven study-specific 
 
 ## Project context
 
-!`echo "Repo: $(basename "$(git rev-parse --show-toplevel 2>/dev/null || pwd)")" && echo "Branch: $(git branch --show-current 2>/dev/null || echo 'unknown')" && echo "Current cert focus (from roadmap):" && head -10 docs/plans/001-roadmap.md 2>/dev/null | grep -E "Weeks?|Focus" || echo "  roadmap not found at expected path" && echo "Existing notes:" && find aif-c01/notes chp/notes mla-c01/notes -maxdepth 2 -type f -name "*.md" 2>/dev/null | head -5 || true`
+!`echo "🧭 Where we are (from STUDY_LOG.md):" && grep -E "Current week|Current focus|Last updated" STUDY_LOG.md 2>/dev/null | head -3 || echo "  STUDY_LOG.md not found — run session-start protocol manually" && echo "" && echo "Repo: $(basename "$(git rev-parse --show-toplevel 2>/dev/null || pwd)")" && echo "Branch: $(git branch --show-current 2>/dev/null || echo 'unknown')" && echo "Existing notes:" && find aif-c01/notes chp/notes mla-c01/notes -maxdepth 2 -type f -name "*.md" 2>/dev/null | head -5 || true`
 
 ## How the skill runs
 
