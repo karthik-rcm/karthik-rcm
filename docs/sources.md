@@ -28,6 +28,7 @@ The canonical list of sources `/aiprof` is allowed to cite from. Every claim in 
 - AWS Responsible AI hub — https://aws.amazon.com/ai/responsible-ai/
 - AWS AI Service Cards — https://aws.amazon.com/ai/responsible-ai/resources/
 - Bedrock Guardrails docs — https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html
+- AWS Cloud Adoption Framework for AI / ML / GenAI — https://docs.aws.amazon.com/whitepapers/latest/aws-caf-for-ai/aws-caf-for-ai.html
 
 ---
 
