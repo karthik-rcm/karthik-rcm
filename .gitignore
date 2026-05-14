@@ -1,0 +1,36 @@
+# Secrets / credentials
+.env
+.env.*
+*.pem
+*.key
+aws-credentials*
+credentials.json
+
+# AWS sandbox local state
+.aws/
+.terraform/
+*.tfstate
+*.tfstate.backup
+*.tfvars
+
+# Practice exam dumps (often copyrighted)
+**/practice-exams-paid/
+**/tutorialsdojo/
+**/whizlabs/
+
+# Local scratch
+scratch/
+tmp/
+*.swp
+.DS_Store
+
+# Loom / video raw exports (large)
+*.mov
+*.mp4
+
+# Python / Node sandbox
+__pycache__/
+*.pyc
+node_modules/
+.venv/
+venv/
