@@ -1,6 +1,6 @@
 # Study Log — Karthik Ramesh
 
-Weekly entries for the 16-week AI Healthcare Certification plan. See [AI_Healthcare_Certification.md](AI_Healthcare_Certification.md) for the full plan.
+Weekly entries against [the roadmap](docs/plans/001-roadmap.md) — the 4-month AI healthcare certification plan.
 
 **Time budget:** 3-5 hrs/week (light — realistic alongside PractiCons workload)
 **Adjusted timeline:** ~28-32 weeks at this pace (vs. the 16-week target for 10 hrs/week)
