@@ -27,4 +27,4 @@ My production work is proprietary. HIPAA-grade systems running inside live RCM o
 ## Where the work lives
 
 - LinkedIn: [https://www.linkedin.com/in/karthikrcm/](https://www.linkedin.com/in/karthikrcm/)
-- Email: karthikramesh2411@gmail.com
+- Email: karthikramesh@gravitashc.com
