@@ -60,6 +60,17 @@ Three repo-local skills live at `.claude/skills/`. They form a clean three-stage
 
 **Source list:** every URL `/aiprof` is allowed to cite lives in [`docs/sources.md`](docs/sources.md). Off-list URLs require explicit approval before fetching.
 
+### Transcript → notes → visual (the standing study flow)
+
+Karthik watches the Skill Builder domain video, copies the **video transcript**, and pastes it here. From that transcript:
+
+1. **Save the raw transcript to `scratch/transcripts/` (gitignored), one file per topic.** It's fuel, not evidence. **Never commit raw AWS transcripts to this public repo** — they're AWS's copyrighted, login-gated training content; redistributing them verbatim under Karthik's name is real copyright exposure (same family as the `.gitignore` "practice exams — often copyrighted" rule). If Karthik wants the raw transcripts backed up to GitHub, mirror them to a **private** `karthik-rcm-transcripts` repo — never the public one.
+2. **Write the notes file in our own words** (`<cert>/notes/<topic>.md`) — this is the citable, legal, committed artifact. The own-words notes + visuals ARE the durable foundation Karthik returns to when building into the app. This is what lives publicly on GitHub.
+3. **Build the HTML visual** when the topic earns it (see below).
+4. Then `/brainstorm` to internalize, `/quiz` to prove under timed conditions.
+
+The transcript is scaffolding; the notes and visual are what survive.
+
 ### Visualize complex topics with HTML — selectively
 
 When a concept is **structural or relational** — a RAG pipeline, an agent loop, embedding space, where Bedrock Guardrails sit between user and model, a dense book chapter's data flow — build a single self-contained HTML file that draws it. Seeing the whole structure at once is how it lands in memory; prose flattens it. Same rule when decoding books: if a chapter's argument is a flow, a hierarchy, or a comparison, diagram it.
