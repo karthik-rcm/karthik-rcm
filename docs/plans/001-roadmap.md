@@ -65,9 +65,21 @@ Start with **Domain 3 (Applications of Foundation Models)** — biggest weight *
 - Then: prompt engineering, fine-tuning vs RAG, model evaluation, then D2 fundamentals, then responsible AI + security/governance.
 
 ### Official resources (free)
-- Exam overview — https://aws.amazon.com/certification/certified-ai-practitioner/
+
+**Register / blueprint:**
+- Exam overview + registration — https://aws.amazon.com/certification/certified-ai-practitioner/
 - Exam guide — https://docs.aws.amazon.com/aws-certification/latest/examguides/ai-practitioner-01.html
-- AWS Skill Builder (search "AIF-C01") — https://skillbuilder.aws/
+
+**Skill Builder — study content (the actual teaching material):**
+- **Exam Prep Plan** (the self-paced learning plan: 19 trainings, Domain 1–5 Review videos + Practice) — https://skillbuilder.aws/learning-plan/3NRN71QZR2/exam-prep-plan-aws-certified-ai-practitioner-aifc01--english/FBV4STG94B
+- The teaching content is the **"Domain N Review"** courses (1h30m instructor videos each). Study order per §3: D3 → D2 → D1 → D4 → D5. Do each domain's **"Practice"** (questions/flashcards) right after its Review.
+- ⚠️ NOT the "Exam Prep *Overview*"/*Summary* (5–15 min orientation, no teaching content).
+- ⚠️ NOT "Exam Prep: AWS Certified AI Practitioner" listed as **Classroom Training** — those are paid, instructor-led, scheduled partner sessions. Wrong type.
+
+**Skill Builder — practice/tests (save for the booking gate, limited attempts):**
+- Official Practice Question Set (~20 Q, free) — https://skillbuilder.aws/learn/4URFGY63KV/official-practice-question-set-aws-certified-ai-practitioner--aifc01--english/FVG43Y1PAX
+- Official Pretest — https://skillbuilder.aws/learn/W84113F8EE/official-pretest-aws-certified-ai-practitioner--aifc01--english/XWVNE9Z36F
+- Official Practice Exam (full length) — https://skillbuilder.aws/learn/PWGBM4E8ZM/official-practice-exam-aws-certified-ai-practitioner-aifc01--english/B1MF12M4GE
 
 ### Study loop (this repo)
 `/aiprof <topic>` (sourced lesson) → `/brainstorm <topic>` (Socratic) → `/quiz aif-c01 <topic>` (MCQs). Each in a fresh session. Sources cited only from `docs/sources.md`.
