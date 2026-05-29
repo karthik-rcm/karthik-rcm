@@ -86,6 +86,31 @@ The canonical list of sources `/aiprof` is allowed to cite from. Every claim in 
 
 ---
 
+## Anthropic certification (CCA-F) + Academy (Cert 3 — CCA-F)
+
+Authoritative Anthropic surfaces only. The CCA-F exam blueprint/price/access circulating online comes mostly from third-party guides (excluded by policy below) — cite Anthropic's own pages, and verify live exam terms here before booking.
+
+- Anthropic Academy / Courses (Skilljar) — https://anthropic.skilljar.com/
+- Anthropic Learn — https://www.anthropic.com/learn
+- Anthropic Claude docs — https://docs.anthropic.com/
+- Building effective agents (Anthropic) — https://www.anthropic.com/research/building-effective-agents
+- Model Context Protocol (MCP) — https://modelcontextprotocol.io/
+
+---
+
+## Local reference library (study consumption, NOT a citation source)
+
+These PDFs are for reading/learning, like YouTube below — not citeable in a notes file (a notes file cites the authoritative primary source, not a book). Mirrored at `~/Downloads/AI_Foundation/`.
+
+- *Building Agentic AI Systems*
+- *Building LLMs for Production*
+- *Hands-On Large Language Models* — Jay Alammar
+- *LLM Engineer's Handbook* — Maxime Labonne
+- *Designing Machine Learning Systems* — Chip Huyen
+- *Build a Large Language Model (From Scratch)* — Sebastian Raschka
+
+---
+
 ## Healthcare AI / RCM context (case-study work)
 
 - CMS AI policy — https://www.cms.gov/about-cms/web-policies-important-links/artificial-intelligence-policy

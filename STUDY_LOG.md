@@ -1,21 +1,21 @@
 # Study Log — Karthik Ramesh
 
-Weekly entries against [the roadmap](docs/plans/001-roadmap.md) — the 4-month AI healthcare certification plan.
+Weekly entries against [the roadmap](docs/plans/001-roadmap.md) — the build-anchored AI-agent certification track.
 
 > **🧭 Where we are right now**
 >
 > | Field | Value |
 > |---|---|
-> | **Current week** | Pre-Week-1 (setup phase) |
-> | **Current focus** | W1 (May 16-22): raw-facts brain dump for **PractiApp Document Intelligence case study** (Bedrock-powered classification — AIF-C01-aligned). Output → `docs/drafts/case-study-raw-notes.md` |
-> | **Active month plan** | [docs/plans/002-month-1-case-study.md](docs/plans/002-month-1-case-study.md) |
-> | **Last updated** | 2026-05-15 |
+> | **Current focus** | Re-anchored 2026-05-29 to a **build-anchored** track. Spine = the **PractiHR autonomy build** (applied agent engineering = the lab + the public case study). Studying **AIF-C01 Domain 3** first (Applications of Foundation Models). |
+> | **Cert sequence** | **AIF-C01 → MLA-C01 → CCA-F** (CHP parked). See [decision 002](docs/decisions/002-build-anchored-cert-track.md). |
+> | **Active lesson** | `aif-c01/notes/d3-1-rag-and-foundation-model-app-design.md` |
+> | **Last updated** | 2026-05-29 |
 >
-> **This block is the source of truth for "where we are."** Every session must read this, then read the matching section of [docs/plans/001-roadmap.md](docs/plans/001-roadmap.md), *before* engaging with the request. Drift from the roadmap is the failure mode this gate prevents. Update this block at the end of each week (or whenever scope shifts).
+> **This block is the source of truth for "where we are."** Every session must read this, then read the matching section of [docs/plans/001-roadmap.md](docs/plans/001-roadmap.md), *before* engaging with the request. Drift from the roadmap is the failure mode this gate prevents. Update this block whenever scope shifts.
 
 **Time budget:** 3-5 hrs/week (light — realistic alongside PractiCons workload)
-**Adjusted timeline:** ~28-32 weeks at this pace (vs. the 16-week target for 10 hrs/week)
-**Start date:** 2026-05-16 (Week 1 begins — subject of case study TBD)
+**Spine:** PractiHR autonomy build (the lab). Certs ride on it; each domain is exercised by a real build stage.
+**Re-anchor date:** 2026-05-29 (build-anchored track begins)
 
 ---
 
@@ -54,7 +54,25 @@ Weekly entries against [the roadmap](docs/plans/001-roadmap.md) — the 4-month 
 
 ---
 
-## Week 1 — TBD (AR Triage case study draft)
+## 2026-05-29 — Re-anchor + first lesson
+
+**Hours:** ~1.0 (strategy re-anchor + first AIF-C01 lesson)
+**What I covered:**
+- Re-anchored the whole track from "certs as FOMO insurance" to **build-anchored**: PractiHR autonomy build is the spine/lab (decision 002).
+- New cert sequence locked: **AIF-C01 → MLA-C01 → CCA-F**; CHP parked.
+- Discovered + scoped Anthropic's CCA-F (agentic cert, Mar 2026) as the eventual "next" cert.
+- Rewrote `001-roadmap.md`, reset this block, added Anthropic/CCA-F sources to `docs/sources.md`.
+- `/aiprof` lesson 1 delivered: **AIF-C01 D3.1 — RAG + foundation-model app design** → `aif-c01/notes/d3-1-rag-and-foundation-model-app-design.md`.
+
+**Confidence snapshot:** unchanged (lesson received, not yet internalized — confidence updates after `/brainstorm`).
+
+**Blockers / risks:** None. PractiCons workload remains the competing demand.
+
+**Next target:** `/brainstorm d3-1-rag-and-foundation-model-app-design` to internalize, then `/quiz aif-c01 rag`.
+
+---
+
+## Week 1 — TBD
 
 **Hours:**
 **What I covered:**
