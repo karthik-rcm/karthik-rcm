@@ -24,6 +24,16 @@ The canonical list of sources `/aiprof` is allowed to cite from. Every claim in 
 - AWS Textract — https://docs.aws.amazon.com/textract/
 - AWS Transcribe — https://docs.aws.amazon.com/transcribe/
 
+### AWS concept explainers (AIF-C01 foundational — citeable exception)
+AWS-authored `/what-is/` explainer pages and the responsible-ML guide. **Exception to the "no `aws.amazon.com/<service>/` marketing" rule below:** these are AWS's own canonical concept definitions, authoritative for a foundational exam that tests exactly these terms. Distinct from sales pages — cite for D1 vocabulary (AI/ML/DL, overfitting, transformers, LLMs, MLOps, bias).
+- Overfitting (What is) — https://aws.amazon.com/what-is/overfitting/
+- Transformers in AI (What is) — https://aws.amazon.com/what-is/transformers-in-artificial-intelligence/
+- Large language model (What is) — https://aws.amazon.com/what-is/large-language-model/
+- MLOps (What is) — https://aws.amazon.com/what-is/mlops/
+- AWS AI services catalog — https://aws.amazon.com/ai/services/
+- Framework to mitigate bias + improve outcomes (AWS Public Sector blog) — https://aws.amazon.com/blogs/publicsector/framework-mitigate-bias-improve-outcomes-new-age-ai/
+- Responsible Use of ML guide (PDF) — https://d1.awsstatic.com/responsible-machine-learning/responsible-use-of-machine-learning-guide.pdf
+
 ### Responsible AI + governance (Domain 4-5)
 - AWS Responsible AI hub — https://aws.amazon.com/ai/responsible-ai/
 - AWS AI Service Cards — https://aws.amazon.com/ai/responsible-ai/resources/
@@ -145,7 +155,7 @@ These PDFs are for reading/learning, like YouTube below — not citeable in a no
 These sources are excluded — `/aiprof` must not cite from them, and surfacing them to add later is fine, but they're off by default:
 
 - Medium articles, Dev.to posts, Towards Data Science — quality is uneven, not authoritative for a credential evidence trail.
-- AWS Marketing pages (`aws.amazon.com/<service>/` without `/docs/`) — sales copy, not technical truth.
+- AWS Marketing pages (`aws.amazon.com/<service>/` without `/docs/`) — sales copy, not technical truth. **Exception:** AWS-authored `/what-is/` concept explainers are citeable for AIF-C01 foundational vocabulary — see the "AWS concept explainers" subsection above. The exclusion still applies to product/sales pages.
 - ChatGPT / Claude / any LLM output — circular citation.
 - Generic StackOverflow answers — context-free, not certification-load-bearing.
 - Tutorials Dojo / Stephane Maarek practice exam content — paid material, also we don't quote others' practice questions verbatim.

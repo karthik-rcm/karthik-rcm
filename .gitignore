@@ -18,6 +18,15 @@ credentials.json
 **/tutorialsdojo/
 **/whizlabs/
 
+# AWS course material (copyrighted, login-gated — never commit to public repo)
+# Scoped to AWS training artifacts, NOT all PDFs — a sanitized case-study PDF is allowed.
+**/*Review*.pdf
+**/*AWS*Certified*.pdf
+**/*Skill*Builder*.pdf
+
+# Local Claude settings (machine-specific, not study evidence)
+.claude/settings.local.json
+
 # Local scratch
 scratch/
 tmp/

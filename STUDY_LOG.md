@@ -6,10 +6,10 @@ Weekly entries against [the roadmap](docs/plans/001-roadmap.md) — the build-an
 >
 > | Field | Value |
 > |---|---|
-> | **Current focus** | Re-anchored 2026-05-29 to a **build-anchored** track. Spine = the **PractiHR autonomy build** (applied agent engineering = the lab + the public case study). Studying **AIF-C01 Domain 3** first (Applications of Foundation Models). |
+> | **Current focus** | Working **AIF-C01 via the Skill Builder Exam Prep Plan**, foundation-first order **D1→D2→D3→D4→D5** (deliberate divergence from the roadmap's points-optimal D3→D2→D1→D4→D5). **Domain 1 Review course complete** (2026-05-30). Next: Domain 2 (Generative AI), or `/brainstorm`+`/quiz` to lock D1 first. |
 > | **Cert sequence** | **AIF-C01 → MLA-C01 → CCA-F** (CHP parked). See [decision 002](docs/decisions/002-build-anchored-cert-track.md). |
-> | **Active lesson** | `aif-c01/notes/d3-1-rag-and-foundation-model-app-design.md` |
-> | **Last updated** | 2026-05-29 |
+> | **Active lesson** | Domain 1 done. Notes: `aif-c01/notes/d1-1-ai-concepts-terminology.md`, `d1-2-practical-use-cases.md`, `d1-3-ml-development-lifecycle.md`. Pending internalization (`/brainstorm`) + timed `/quiz`. |
+> | **Last updated** | 2026-05-30 |
 >
 > **This block is the source of truth for "where we are."** Every session must read this, then read the matching section of [docs/plans/001-roadmap.md](docs/plans/001-roadmap.md), *before* engaging with the request. Drift from the roadmap is the failure mode this gate prevents. Update this block whenever scope shifts.
 
@@ -72,10 +72,27 @@ Weekly entries against [the roadmap](docs/plans/001-roadmap.md) — the build-an
 
 ---
 
-## Week 1 — TBD
+## 2026-05-30 — AIF-C01 Domain 1 Review (complete)
 
-**Hours:**
+**Hours:** ~2.5 (transcript-driven notes for all of Domain 1)
 **What I covered:**
+- Completed the Skill Builder **Domain 1 Review** course end to end (completion stamped 2026-05-30) — all three task statements, 17 lessons.
+- Wrote three own-words notes files from the video transcripts (transcripts saved to gitignored `scratch/`):
+  - `aif-c01/notes/d1-1-ai-concepts-terminology.md` — AI/ML/DL nesting, inference, data types, learning styles, overfitting/underfitting/bias, neural nets + transformers/LLMs.
+  - `aif-c01/notes/d1-2-practical-use-cases.md` — when to use AI vs rule-based (deterministic vs probabilistic), ML problem types, the full AWS managed AI service catalog, real-world case studies.
+  - `aif-c01/notes/d1-3-ml-development-lifecycle.md` — the 6-stage pipeline/lifecycle, AWS data + training + deploy services, four SageMaker inference options, drift + MLOps, evaluation metrics (confusion matrix, precision/recall/F1, AUC/ROC, MSE/RMSE/MAE), business metrics.
+- Built an interactive ML-lifecycle HTML visual (`scratch/visuals/ml-lifecycle.html`, gitignored — promote on OK).
+- Added AWS `/what-is/` concept explainers as a citeable AIF-C01 tier in `docs/sources.md` (with an explicit carve-out from the marketing-page exclusion).
+
 **Confidence snapshot:**
-**Blockers / risks:**
-**Next week target:**
+| Domain | Score | Δ |
+|--------|-------|---|
+| AIF-C01 D1 (AI/ML fundamentals) | 3 | ↑ from 2 — notes complete, not yet quiz-proven under timed conditions |
+| AIF-C01 D2 (GenAI fundamentals) | 3 | — |
+| AIF-C01 D3 (Foundation models) | 3 | — |
+| AIF-C01 D4 (Responsible AI) | 2 | — |
+| AIF-C01 D5 (AI Security/Governance) | 2 | — |
+
+**Blockers / risks:** D1 confidence is "lessons received," not internalized. Exam-pressure underperformance is the known risk — D1 is not locked until a timed `/quiz` proves it. Don't book on course-completion alone.
+
+**Next week target:** `/brainstorm` the three D1 notes to internalize, then timed `/quiz aif-c01` per task statement. Then start Domain 2 (Generative AI Fundamentals).
