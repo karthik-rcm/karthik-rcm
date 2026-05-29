@@ -60,6 +60,17 @@ Three repo-local skills live at `.claude/skills/`. They form a clean three-stage
 
 **Source list:** every URL `/aiprof` is allowed to cite lives in [`docs/sources.md`](docs/sources.md). Off-list URLs require explicit approval before fetching.
 
+### Visualize complex topics with HTML — selectively
+
+When a concept is **structural or relational** — a RAG pipeline, an agent loop, embedding space, where Bedrock Guardrails sit between user and model, a dense book chapter's data flow — build a single self-contained HTML file that draws it. Seeing the whole structure at once is how it lands in memory; prose flattens it. Same rule when decoding books: if a chapter's argument is a flow, a hierarchy, or a comparison, diagram it.
+
+**Be picky. This is the exception, not the default.** Most of AIF-C01 is vocabulary and judgment calls ("fine-tune vs RAG") with nothing to draw — forcing a diagram there is wasted motion that slows the loop. Use HTML only when the topic is genuinely spatial/relational.
+
+- **Test before building:** would the visual help Karthik *redraw it from memory and teach it cold*? If not, it's decoration — skip it. Recall, not art.
+- **One self-contained `.html` file** — inline CSS/JS, no build step, opens in a browser directly. Interactive (expand/animate/step-through) only when interactivity aids understanding; otherwise a clean static diagram.
+- **Scratch by default, promote the keepers.** Build visuals in a scratch location outside the committed tree (`/tmp/` or a gitignored dir). They're learning aids, not evidence. Only promote one into the repo (under the relevant cert folder, e.g. `aif-c01/visuals/`) if it's genuinely good enough to be public proof — and only on Karthik's OK, since this is a public repo.
+- **HIPAA still applies.** A visual built off case-study material follows the same sanitization rules as everything else — no client names, no PHI, no fingerprinting numbers.
+
 ---
 
 ## What this repo is
