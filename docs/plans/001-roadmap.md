@@ -2,7 +2,7 @@
 
 **Status:** Active
 **Owner:** Karthik
-**Date:** 2026-05-29 (rewritten; supersedes the 2026-05-15 cert-FOMO version)
+**Date:** 2026-05-30 (study progress + foundation-first order; supersedes the 2026-05-15 cert-FOMO version)
 **Type:** plan
 **Decision of record:** [docs/decisions/002-build-anchored-cert-track.md](../decisions/002-build-anchored-cert-track.md)
 
@@ -58,11 +58,11 @@ The books in `docs/` (and `~/Downloads/AI_Foundation/`) are the reference librar
 
 **Format:** 65 questions, 90 min, pass 700/1000.
 
-### Study order (build-aligned, not domain-numeric)
-Start with **Domain 3 (Applications of Foundation Models)** — biggest weight *and* closest to the PractiHR build (RAG, prompt engineering, agents). Then D2 (GenAI fundamentals), then D1/D4/D5.
+### Study order (actual: foundation-first)
+The roadmap originally proposed points-optimal D3→D2→D1→D4→D5 (biggest weight first). **Karthik chose foundation-first D1→D2→D3→D4→D5** — build the conceptual base before the heavy application domain. Deliberate divergence, not drift; the D3.1 RAG lesson written 2026-05-29 stays valid and was merged into the full D3 notes.
 
-- **First lesson (active):** D3.1 — RAG + foundation-model app design → `aif-c01/notes/d3-1-rag-and-foundation-model-app-design.md`
-- Then: prompt engineering, fine-tuning vs RAG, model evaluation, then D2 fundamentals, then responsible AI + security/governance.
+- **Done (Domain Review courses + own-words notes):** D1 (3 files), D2 (3 files), D3 (4 files; 3.1 merges the earlier RAG lesson).
+- **Remaining:** D4 (Responsible AI) + D5 (Security/Governance) transcripts → notes; then the learning stages (visual-kt + deep discussion + quiz) across all domains; hold the 80% timed-mock booking gate.
 
 ### Official resources (free)
 
@@ -158,11 +158,13 @@ Tactics: pass AIF → AWS auto-grants 50% off MLA; watch Skill Builder promo vou
 | Milestone | Status | Notes |
 |---|---|---|
 | Re-anchor roadmap to build-anchored track | ✅ | 2026-05-29, decision 002 |
-| AIF-C01 D3 first lesson (RAG / FM app design) | ✅ | lesson written 2026-05-29; pending `/brainstorm` |
-| AIF-C01 D3 remaining (prompt eng, fine-tune vs RAG, eval) | ☐ | |
-| AIF-C01 D2 (GenAI fundamentals) | ☐ | |
-| AIF-C01 D1 / D4 / D5 | ☐ | |
-| **AIF-C01 PASSED** | ☐ | unlocks MLA 50% voucher |
+| AIF-C01 D1 (AI/ML fundamentals) — notes | ✅ | 2026-05-30; d1-1/2/3, full Domain Review course |
+| AIF-C01 D2 (GenAI fundamentals) — notes | ✅ | 2026-05-30; d2-1/2/3, full Domain Review course |
+| AIF-C01 D3 (Applications of FMs) — notes | ✅ | 2026-05-30; d3-1/2/3/4, 3.1 merges the earlier RAG lesson |
+| AIF-C01 D4 (Responsible AI) — notes | ☐ | next transcript to capture |
+| AIF-C01 D5 (Security/Compliance/Governance) — notes | ☐ | |
+| AIF-C01 learning stages (visual-kt + discussion + quiz, all domains) | ☐ | notes ≠ readiness; deep discussion is the gate |
+| **AIF-C01 PASSED** | ☐ | unlocks MLA 50% voucher; book only after 80%+ timed mock |
 | MLA-C01 D1–D4 | ☐ | build-aligned |
 | **MLA-C01 PASSED** | ☐ | the anchor |
 | GravitasHC → Claude Partner Network | ☐ | CCA-F access path |
@@ -175,7 +177,8 @@ Tactics: pass AIF → AWS auto-grants 50% off MLA; watch Skill Builder promo vou
 
 - 2026-05-15 — Original plan: certs as FOMO insurance, AIF → CHP → MLA, AR Triage case study first. *(Superseded.)*
 - 2026-05-29 — Re-anchored to a **build-anchored** track: PractiHR autonomy build is the spine/lab; certs sequenced for durable credibility **AIF → MLA → CCA-F**; CHP parked; AR Triage case study reframed toward PractiHR onboarding autonomy. See [decision 002](../decisions/002-build-anchored-cert-track.md).
+- 2026-05-30 — Switched AIF-C01 study order to **foundation-first (D1→D2→D3→D4→D5)** over the points-optimal D3-first. Captured Domain Review courses + own-words notes for D1, D2, D3 in one session. Built the `/visual-kt` study skill + Professor Claude teaching rule. Deep-discussion/quiz stages deferred behind transcript capture — flagged as the real readiness gate (notes ≠ teach-cold).
 
 ---
 
-*Last updated: 2026-05-29 · Plan owner: Karthik Ramesh · Strategic advisor: Claude*
+*Last updated: 2026-05-30 · Plan owner: Karthik Ramesh · Strategic advisor: Claude*

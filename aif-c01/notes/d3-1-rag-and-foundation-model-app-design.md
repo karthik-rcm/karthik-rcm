@@ -73,6 +73,37 @@ This sub-domain is the exact engineering of the PractiHR autonomy build's first 
 - **Fine-tuning carries a Provisioned-Throughput cost** to serve. [Source 3] "Just fine-tune it" is not the cheap default the phrasing implies.
 - **Domain 3 is the heaviest domain on AIF-C01** (largest single weighting). [VERIFY: confirm the exact percentage in the exam-guide PDF — the HTML exam-guide URL rendered as a JS shell and did not return task-statement text this session.]
 
+## Skill Builder additions (Task 3.1, full lessons — 2026-05-30)
+
+The `/aiprof` material above covers RAG + inference params from cited docs. The Skill Builder video adds the rest of Task 3.1: how to *choose* a pre-trained model, interpretability vs explainability, the vector-DB service list, and agents.
+
+### Pre-trained model selection criteria
+Cost, modality, latency, multilingual, model size, model complexity, customization, input/output length.
+- **Cost vs accuracy tradeoff** — e.g. 98% accurate at $100Ks to train vs 97% at $1000s. Depends on requirements; balance training time, cost, performance.
+- **Latency / inference speed** — real-time use (self-driving) needs fast inference. A **KNN** model does most work *at inference time* → slow, and bad for high-dimensional problems. Match inference speed to the use case.
+- **Architecture by task** — **CNNs** for image recognition, **RNNs** for NLP. Complexity = parameters + layers + operations → affects speed, memory, accuracy. More complex = higher accuracy but more compute/data.
+- **Metric choice matters** — accuracy, precision, recall, F1, RMSE, **MAP (mean average precision)**, MAE. Object detection → **MAP** (locate + classify multiple objects). **Accuracy is bad for imbalanced data.** Pick the metric *before* selecting the model.
+- **Availability/compatibility** — model hubs (TensorFlow Hub, PyTorch Hub, **Hugging Face**); check framework compatibility, license, docs, maintenance, known issues.
+
+### Interpretability vs explainability (exam distinction)
+- **Interpretability = transparency** — explain mathematically (coefficients/formulas) *why* a prediction happened. Only possible if the model is simple.
+- **Foundation models are NOT interpretable by design** — too complex, "black boxes."
+- **Explainability** — approximate the black box *locally* with a simpler interpretable model. Different from interpretability.
+- If interpretability is a hard requirement → use **linear regression or decision trees**, not an FM.
+
+### AWS services that store embeddings in vector databases
+Amazon **OpenSearch Service** (+ Serverless vector engine; supports semantic search via BERT embeddings), Amazon **Aurora**, **Redis**, Amazon **Neptune**, Amazon **DocumentDB** (MongoDB compat), Amazon **RDS for PostgreSQL** (**pgvector** extension). A **vector DB requires an ML embedding model** to populate it — the model is a prerequisite. **Knowledge Bases for Amazon Bedrock** = fully managed RAG connecting FMs to your data as embeddings, no FM retraining.
+
+### Agents in multi-step tasks
+FMs can answer from pre-trained knowledge but **can't complete real-world tasks** (book a flight, process an order) — those need org-specific data + workflows. **Agents for Amazon Bedrock** orchestrate the prompt→completion workflow: break tasks into steps, generate orchestration logic, **call APIs to take actions**, and invoke knowledge bases to supplement info. An agent = the software layer between user request, FM, and external data/apps.
+
+### Added gotchas
+- **KNN does its work at inference time** → slow predictions; wrong for real-time + high-dimensional problems.
+- **MAP for object detection, not accuracy.** And accuracy is unreliable on imbalanced datasets (recurring D1/D2/D3 theme).
+- **Interpretability ≠ explainability.** Interpretability = inherently understandable (simple models). Explainability = approximating a black box after the fact. FMs get explainability at best, never true interpretability.
+- **A vector DB needs an embedding model to fill it** — the ML model is a prerequisite, not an afterthought.
+- **Agents = action-taking + orchestration**, not just retrieval. RAG *retrieves*; agents *act* (call APIs). Don't conflate them.
+
 ## Sources
 
 1. **[Knowledge Bases for Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base.html)** — fetched 2026-05-29

@@ -33,6 +33,24 @@ AWS-authored `/what-is/` explainer pages and the responsible-ML guide. **Excepti
 - AWS AI services catalog — https://aws.amazon.com/ai/services/
 - Framework to mitigate bias + improve outcomes (AWS Public Sector blog) — https://aws.amazon.com/blogs/publicsector/framework-mitigate-bias-improve-outcomes-new-age-ai/
 - Responsible Use of ML guide (PDF) — https://d1.awsstatic.com/responsible-machine-learning/responsible-use-of-machine-learning-guide.pdf
+- GAN (What is) — https://aws.amazon.com/what-is/gan/
+- Selecting the right foundation model (AWS Startups blog) — https://aws.amazon.com/blogs/startups/selecting-the-right-foundation-model-for-your-startup/
+- Foundation models (What is) — https://aws.amazon.com/what-is/foundation-models/
+- Prompt engineering (What is) — https://aws.amazon.com/what-is/prompt-engineering/
+- OpenSearch vector database capabilities (AWS Big Data blog) — https://aws.amazon.com/blogs/big-data/amazon-opensearch-services-vector-database-capabilities-explained/
+- Role of vector datastores in gen-AI (AWS Database blog) — https://aws.amazon.com/blogs/database/the-role-of-vector-datastores-in-generative-ai-applications/
+- OpenSearch Serverless vector database — https://aws.amazon.com/opensearch-service/serverless-vector-database/
+- Domain-adaptation fine-tuning in SageMaker JumpStart (AWS ML blog) — https://aws.amazon.com/blogs/machine-learning/domain-adaptation-fine-tuning-of-foundation-models-in-amazon-sagemaker-jumpstart-on-financial-data/
+- RLHF (What is) — https://aws.amazon.com/what-is/reinforcement-learning-from-human-feedback/
+- Responsible AI in the generative era (Amazon Science) — https://www.amazon.science/blog/responsible-ai-in-the-generative-era
+- Responsible AI best practices (AWS Enterprise Strategy blog) — https://aws.amazon.com/blogs/enterprise-strategy/responsible-ai-best-practices-promoting-responsible-and-trustworthy-ai-systems/
+- Shared Responsibility Model — https://aws.amazon.com/compliance/shared-responsibility-model/
+- Securing generative AI: relevant security controls (AWS Security blog) — https://aws.amazon.com/blogs/security/securing-generative-ai-applying-relevant-security-controls/
+- ISO 42001 foundational standard for responsible AI (AWS ML blog) — https://aws.amazon.com/blogs/machine-learning/iso-42001-a-new-foundational-global-standard-to-advance-responsible-ai/
+- Assess risk of AI systems (AWS ML blog) — https://aws.amazon.com/blogs/machine-learning/learn-how-to-assess-risk-of-ai-systems/
+- Data governance (What is) — https://aws.amazon.com/what-is/data-governance/
+- NIST AI Risk Management Framework (NIST.AI.100-1, primary source) — https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf
+- Data governance in the age of generative AI (AWS Big Data blog) — https://aws.amazon.com/blogs/big-data/data-governance-in-the-age-of-generative-ai/
 
 ### Responsible AI + governance (Domain 4-5)
 - AWS Responsible AI hub — https://aws.amazon.com/ai/responsible-ai/
