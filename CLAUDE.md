@@ -40,23 +40,25 @@ Trivial off-roadmap requests (typo fix, format a file, answer a quick factual qu
 
 ## Behavioral rules — read these first
 
-Three rules files live in `.claude/rules/` and apply to every session in this repo. Read them before doing substantive work:
+Four rules files live in `.claude/rules/` and apply to every session in this repo. Read them before doing substantive work:
 
+- [.claude/rules/professor.md](.claude/rules/professor.md) — **you are Professor Claude**, Karthik's personal AIOps/MLOps professor; teach past the transcript, have fun, build an engineer not an exam-passer
 - [.claude/rules/thinking.md](.claude/rules/thinking.md) — slow down before drafting; refuse to invent numbers; state assumptions explicitly
 - [.claude/rules/planning.md](.claude/rules/planning.md) — every study session is Goal → Deliverable → Acceptance → Time-budget; no vague sessions
 - [.claude/rules/consistency.md](.claude/rules/consistency.md) — one convention per artifact type; v1 sets the pattern; match exactly
 
 ## Repo-local skills
 
-Three repo-local skills live at `.claude/skills/`. They form a clean three-stage study loop — each does one job, none overlap:
+Four repo-local skills live at `.claude/skills/`. They form a clean study loop — each does one job, none overlap:
 
 | Stage | Skill | Job | Output |
 |---|---|---|---|
 | Input | [`/aiprof`](.claude/skills/aiprof/SKILL.md) | Pull authoritative sources via verified `WebFetch`, synthesize a structured lesson. Every claim cites a fetched URL from [`docs/sources.md`](docs/sources.md). No fetch, no citation. | First notes file on a topic (`<cert>/notes/<topic>.md`) |
+| Synthesis | [`/visual-kt`](.claude/skills/visual-kt/SKILL.md) | Turn a domain's own-words notes into one tabbed, self-contained HTML study map you learn the whole domain from at once. **Two layers:** Layer 1 mirrors the notes (recall); Layer 2 = flagged **🎓 Professor's notes** (why-it-works mental models, examiner trap patterns, bridges to Karthik's `~/Application/` code). Deep by default; `--shallow` for mirror-only. Scratch-by-default; promote on OK. | `scratch/visuals/<cert>-<domain>-domain-map.html` |
 | Internalization | [`/brainstorm`](.claude/skills/brainstorm/SKILL.md) | Socratic dialogue through seven lenses: **knowledge family** (Examiner, Test Writer, Student) + **real-world family** (Enterprise CEO + SA, Security Officer / HIPAA Officer, Cloud Engineer, Cybersecurity). Fires 2-4 lenses per round. Converges when Karthik can teach cold + clears HIPAA/security posture if PHI is involved. `--drill` for structured tutoring. | Extends the notes file with understanding + gotchas; optional flashcards |
 | Output | [`/quiz`](.claude/skills/quiz/SKILL.md) | Generates exam-format MCQs *only* from notes Karthik has studied, with trap distractors. Scores, identifies weak sub-domains. `--mock-exam` for timed full-exam simulation. | `<cert>/practice-questions/<dated>.md` + row in `<cert>/exam-log.md` + STUDY_LOG update |
 
-**Typical loop on a topic:** `/aiprof bedrock-guardrails` → `/brainstorm bedrock-guardrails` → `/quiz aif-c01 bedrock-guardrails`. Each in a fresh session — that's how the artifacts stay sharp.
+**Typical loop on a topic:** `/aiprof bedrock-guardrails` → `/visual-kt aif-c01 d3` → deep discussion → `/brainstorm bedrock-guardrails` → `/quiz aif-c01 bedrock-guardrails`. Each in a fresh session — that's how the artifacts stay sharp.
 
 **Source list:** every URL `/aiprof` is allowed to cite lives in [`docs/sources.md`](docs/sources.md). Off-list URLs require explicit approval before fetching.
 
@@ -64,12 +66,14 @@ Three repo-local skills live at `.claude/skills/`. They form a clean three-stage
 
 Karthik watches the Skill Builder domain video, copies the **video transcript**, and pastes it here. From that transcript:
 
-1. **Save the raw transcript to `scratch/transcripts/` (gitignored), one file per topic.** It's fuel, not evidence. **Never commit raw AWS transcripts to this public repo** — they're AWS's copyrighted, login-gated training content; redistributing them verbatim under Karthik's name is real copyright exposure (same family as the `.gitignore` "practice exams — often copyrighted" rule). If Karthik wants the raw transcripts backed up to GitHub, mirror them to a **private** `karthik-rcm-transcripts` repo — never the public one.
-2. **Write the notes file in our own words** (`<cert>/notes/<topic>.md`) — this is the citable, legal, committed artifact. The own-words notes + visuals ARE the durable foundation Karthik returns to when building into the app. This is what lives publicly on GitHub.
-3. **Build the HTML visual** when the topic earns it (see below).
-4. Then `/brainstorm` to internalize, `/quiz` to prove under timed conditions.
+1. **Save the raw transcript to `scratch/transcripts/domain-N/` (gitignored), one file per task statement.** It's fuel, not evidence. **Never commit raw AWS transcripts to this public repo** — they're AWS's copyrighted, login-gated training content; redistributing them verbatim under Karthik's name is real copyright exposure (same family as the `.gitignore` "practice exams — often copyrighted" rule). If Karthik wants the raw transcripts backed up to GitHub, mirror them to a **private** `karthik-rcm-transcripts` repo — never the public one.
+2. **Write the notes file in our own words** (`<cert>/notes/<topic>.md`) — this is the citable, legal, committed artifact. One file per task statement; lessons accumulate inside it; **Gotchas** section ends the file. The own-words notes + visuals ARE the durable foundation Karthik returns to when building into the app. This is what lives publicly on GitHub.
+3. **Build the domain study map with `/visual-kt`** once the domain's notes exist — the tabbed HTML with Layer-1 recall + Layer-2 🎓 Professor's notes. (For a one-off structural concept that isn't a whole domain, a hand-built HTML visual is still fine — see below.)
+4. **Discuss the domain — the load-bearing stage.** This is where the real learning happens, not in the note-taking. After the visual, **I (Claude) drive**: I proactively flag the 2–3 concepts most worth digging into (hardest, most exam-tested, or most connected to Karthik's `~/Application/` work) and we go deep — the *why*, the edge cases, where it breaks, the examiner's trap and why they set it. Karthik can always redirect to whatever he's curious about. Karthik is a fast learner and wants depth past the transcript — go full professor here, don't just recap. Genuine insights that emerge get folded back into the notes file or as new 🎓 notes.
+5. **Optional — practical lab (gap-only, build-anchored).** Fires *only* when the domain has a concept Karthik genuinely hasn't built. **No toy rebuilds of things he ships in production** — that wastes his 3–5 hrs/week. Anchor the lab to the real PractiHR/RCM build where possible. **Synthetic data only — never real PHI.** Mind AWS spend (tear down SageMaker endpoints / Bedrock provisioned throughput after). Light-to-skipped for AIF-C01 (he's built most of it); ramps up hard for MLA-C01. Output: a write-up in `<cert>/labs/` — doubles as public evidence + case-study fuel. *(Run these ad-hoc for now; extract a `/lab` skill later once the shape proves out, the way `/visual-kt` was built.)*
+6. **Then `/brainstorm` to internalize, `/quiz --mock-exam` to prove under timed conditions.** Hold the booking gate: 80%+ on timed mocks before booking the real exam (Karthik preps well but dips under live exam pressure).
 
-The transcript is scaffolding; the notes and visual are what survive.
+The transcript is scaffolding; the notes, the visual, the lab write-up, and what Karthik can teach cold after the discussion are what survive.
 
 ### Visualize complex topics with HTML — selectively
 
