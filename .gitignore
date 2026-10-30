@@ -30,8 +30,6 @@ credentials.json
 # Local Claude settings (machine-specific, not study evidence)
 .claude/settings.local.json
 
-# Local scratch: never committed
-scratch/
 tmp/
 *.swp
 .DS_Store
