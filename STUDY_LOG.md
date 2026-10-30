@@ -8,8 +8,8 @@ Weekly entries against [the study plan](docs/plans/007-ai-fde-study-plan.md): AI
 > |---|---|
 > | **Current focus** | **AI agent engineering, taught from official cloud docs** per [plan 007](docs/plans/007-ai-fde-study-plan.md). Next: finish Session 0 (decision 003, exam-log note, name-guard hook), then Session 1, the agent loop from scratch on a free local model. |
 > | **Cert sequence** | **Retired 2026-10-30**: AIF-C01, MLA-C01, CCA-F and the parked CHP. Old roadmap kept in [the archive](docs/plans/archive/001-roadmap.md). |
-> | **Active lesson** | None yet. Chapter 1 is drafted in `scratch/visuals/fde-course-map.html` and moves into `fde-field-book/` (plan 006) before Session 1. |
-> | **Last updated** | 2026-10-30 |
+> | **Active lesson** | Session 1, the agent loop. Chapter 1 now lives in `fde-field-book/` (built 2026-10-31); Foundry Local not yet installed. |
+> | **Last updated** | 2026-10-31 |
 >
 > **This block is the source of truth for "where we are."** Every session must read this, then read the matching section of [docs/plans/007-ai-fde-study-plan.md](docs/plans/007-ai-fde-study-plan.md), *before* engaging with the request. Drift from the roadmap is the failure mode this gate prevents. Update this block whenever scope shifts.
 

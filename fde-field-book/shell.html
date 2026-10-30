@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI FDE Field Book</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+<style>
+@@BOOK_CSS@@
+</style>
+</head>
+<body>
+<div class="book">
+  <!-- To add a chapter: turn its "soon" span into links here, then add chapters/NN-slug.html and run python3 build.py. -->
+  <aside class="toc" id="toc">
+    <div class="toc-title">AI FDE Field Book</div>
+    <div class="toc-meta">1 of 15 chapters written</div>
+    <button class="theme-btn" id="theme-btn" type="button">◐ Theme: system</button>
+    <a href="#front">How to read this book</a>
+
+    <div class="toc-part">Part 1 · Week 1: Foundations</div>
+    <a href="#ch1">1. The agent loop, from scratch</a>
+    <a href="#ch1-1" class="sub">1.1 Watch the loop run</a>
+    <a href="#ch1-2" class="sub">1.2 What the model actually sees</a>
+    <a href="#ch1-3" class="sub">1.3 Professor's notes</a>
+    <a href="#ch1-4" class="sub">1.4 Check yourself</a>
+    <a href="#ch1-5" class="sub">1.5 Your build</a>
+    <span class="soon">2. Frontier LLMs, what an agent is, first claims agent in LangChain <em>W1 D2</em></span>
+    <span class="soon">3. Coding agents (Claude Code), ADLC, repo hardening, the pilot <em>W1 D3</em></span>
+    <span class="soon">4. Open and local models, inference hardware, cost per claim <em>W1 D4</em></span>
+    <span class="soon">5. Harness engineering: Claude Agent SDK vs Deep Agents <em>W1 D5</em></span>
+
+    <div class="toc-part">Part 2 · Week 2: Real agents</div>
+    <span class="soon">6. Agent architecture traps, evals, Langfuse observability <em>W2 D1</em></span>
+    <span class="soon">7. RAG, MCP, short and long-term memory (Qdrant) <em>W2 D2</em></span>
+    <span class="soon">8. LangGraph durable execution, human in the loop, Supabase <em>W2 D3</em></span>
+    <span class="soon">9. Agent swarms: dispatcher, fan-out, rate limits, retries <em>W2 D4</em></span>
+    <span class="soon">10. LLM as a judge, the improver agent, Supabase Auth <em>W2 D5</em></span>
+
+    <div class="toc-part">Part 3 · Week 3: Production</div>
+    <span class="soon">11. Discovery, governance, responsible AI, AWS account setup <em>W3 D1</em></span>
+    <span class="soon">12. Agent security, guardrails, gateways, AgentCore Gateway and Cedar <em>W3 D2</em></span>
+    <span class="soon">13. Enterprise context layer, integrations, AgentCore Memory <em>W3 D3</em></span>
+    <span class="soon">14. Production on AgentCore Runtime, swarm of 25, human sign-off <em>W3 D4</em></span>
+    <span class="soon">15. Capstone copilot, handover, AWS teardown, next steps <em>W3 D5</em></span>
+  </aside>
+
+  <main>
+@@CHAPTERS@@
+  </main>
+</div>
+
+<script>
+@@BOOK_JS@@
+</script>
+</body>
+</html>

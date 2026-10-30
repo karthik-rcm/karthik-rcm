@@ -114,6 +114,15 @@ AWS-authored `/what-is/` explainer pages and the responsible-ML guide. **Excepti
 
 ---
 
+## Microsoft Learn (field book, plan 007)
+
+Added 10/31/2026, both fetched that day. Each row covers its pages below that URL.
+
+- Foundry Local (local models, CLI reference, tool-calling tutorial): https://learn.microsoft.com/en-us/azure/foundry-local/
+- Microsoft Agent Framework: https://learn.microsoft.com/en-us/agent-framework/
+
+---
+
 ## Anthropic certification (CCA-F) + Academy (Cert 3 — CCA-F)
 
 Authoritative Anthropic surfaces only. The CCA-F exam blueprint/price/access circulating online comes mostly from third-party guides (excluded by policy below) — cite Anthropic's own pages, and verify live exam terms here before booking.

@@ -189,11 +189,17 @@ karthik-rcm/
 │   ├── plans/                             NNN-<slug>.md (e.g. 007-ai-fde-study-plan.md)
 │   ├── drafts/                            Work-in-progress drafts (brain-dumps, iterations)
 │   └── decisions/                         NNN-<slug>.md decision records (ADR-style)
+├── fde-field-book/                        The book and its labs (plan 006)
+│   ├── shell.html, book.css, book.js      Page frame, shared theme, shared script
+│   ├── chapters/                          One source file per chapter (00-front, 01-agent-loop, ...)
+│   ├── labs/                              chNN/ per chapter: synthetic data, our own code
+│   ├── build.py                           python3 build.py stitches the book
+│   └── fde-field-book.html                The finished book: the only file anyone opens
 └── case-study-ar-triage/                  AR Triage case study (weeks 1-2)
     └── narrative.md
 ```
 
-`fde-field-book/` (the book and its labs, plan 006) is created in Session 1. The cert notes that lived in `aif-c01/` were removed on 10/30/2026 and remain in git history.
+The cert notes that lived in `aif-c01/` were removed on 10/30/2026 and remain in git history.
 
 ## Quick reference — file roles
 
