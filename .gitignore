@@ -27,8 +27,11 @@ credentials.json
 # Local Claude settings (machine-specific, not study evidence)
 .claude/settings.local.json
 
-# Local scratch
-scratch/
+# Local scratch (transcripts stay ignored; the field book is tracked)
+scratch/*
+!scratch/visuals/
+scratch/visuals/*
+!scratch/visuals/fde-course-map.html
 tmp/
 *.swp
 .DS_Store

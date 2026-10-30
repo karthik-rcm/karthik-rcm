@@ -71,6 +71,26 @@ One session = one course "Day". Lecture numbers point to the full list below.
 | 15 | W3 D5 | Capstone copilot, handover, AWS teardown, next steps | W3 35-42 | 8 |
 | | | | **Total** | **129** |
 
+## How we learn it: build, not just watch
+
+- **Cloud: Azure** (decided 2026-10-30). Weeks 1 and 2 are mostly cloud-neutral (OpenRouter, LangChain, LangGraph, Langfuse, Qdrant, Supabase); the model calls move to Azure OpenAI. Week 3's AWS Bedrock AgentCore labs get an Azure equivalent, picked from Microsoft Learn docs at the start of that session, never from memory.
+- **Tradeoff accepted:** the AIF-C01 and MLA-C01 certs are AWS exams, so these labs give them no hands-on practice.
+- **Loop per session:** watch the Day's lectures (about 1.5 hours), read the vendor docs for the one new idea, build that piece, write a short lab note in our own words.
+- **Skim what's already shipped daily:** W1 D3 (Claude Code, repo hardening, pre-commit hooks).
+- **Synthetic data only.** No PHI, no client data.
+
+### Session 1
+
+- **Goal:** W1 D1, the agent loop from scratch.
+- **Deliverable:** a small Python script (about 50 lines) that calls Azure OpenAI with one tool, written by hand with no framework.
+- **Acceptance:** explain the loop cold: the model asks for a tool, the code runs it, the result goes back, repeat until the model stops asking.
+- **Budget:** 3 hours.
+
+### Open
+
+- Does AIF-C01 pause while this runs, or run side by side?
+- Which real build do the labs anchor to?
+
 ## Curriculum
 
 3 sections, 124 lectures, 21h 25m total length.
