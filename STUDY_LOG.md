@@ -1,17 +1,17 @@
 # Study Log — Karthik Ramesh
 
-Weekly entries against [the roadmap](docs/plans/001-roadmap.md) — the build-anchored AI-agent certification track.
+Weekly entries against [the study plan](docs/plans/007-ai-fde-study-plan.md): AI agent engineering, taught from official cloud docs.
 
 > **🧭 Where we are right now**
 >
 > | Field | Value |
 > |---|---|
-> | **Current focus** | Working **AIF-C01 via the Skill Builder Exam Prep Plan**, foundation-first order **D1→D2→D3→D4→D5** (deliberate divergence from the roadmap's points-optimal D3→D2→D1→D4→D5). **Domain 1 Review course complete** (2026-05-30). Next: Domain 2 (Generative AI), or `/brainstorm`+`/quiz` to lock D1 first. |
-> | **Cert sequence** | **AIF-C01 → MLA-C01 → CCA-F** (CHP parked). See [decision 002](docs/decisions/002-build-anchored-cert-track.md). |
-> | **Active lesson** | Domain 1 done. Notes: `aif-c01/notes/d1-1-ai-concepts-terminology.md`, `d1-2-practical-use-cases.md`, `d1-3-ml-development-lifecycle.md`. Pending internalization (`/brainstorm`) + timed `/quiz`. |
-> | **Last updated** | 2026-05-30 |
+> | **Current focus** | **AI agent engineering, taught from official cloud docs** per [plan 007](docs/plans/007-ai-fde-study-plan.md). Next: finish Session 0 (decision 003, exam-log note, name-guard hook), then Session 1, the agent loop from scratch on a free local model. |
+> | **Cert sequence** | **Retired 2026-10-30**: AIF-C01, MLA-C01, CCA-F and the parked CHP. Old roadmap kept in [the archive](docs/plans/archive/001-roadmap.md). |
+> | **Active lesson** | None yet. Chapter 1 is drafted in `scratch/visuals/fde-course-map.html` and moves into `fde-field-book/` (plan 006) before Session 1. |
+> | **Last updated** | 2026-10-30 |
 >
-> **This block is the source of truth for "where we are."** Every session must read this, then read the matching section of [docs/plans/001-roadmap.md](docs/plans/001-roadmap.md), *before* engaging with the request. Drift from the roadmap is the failure mode this gate prevents. Update this block whenever scope shifts.
+> **This block is the source of truth for "where we are."** Every session must read this, then read the matching section of [docs/plans/007-ai-fde-study-plan.md](docs/plans/007-ai-fde-study-plan.md), *before* engaging with the request. Drift from the roadmap is the failure mode this gate prevents. Update this block whenever scope shifts.
 
 **Time budget:** 3-5 hrs/week (light — realistic alongside PractiCons workload)
 **Spine:** PractiHR autonomy build (the lab). Certs ride on it; each domain is exercised by a real build stage.

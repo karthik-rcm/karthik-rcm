@@ -1,10 +1,11 @@
 # Roadmap — Build-Anchored AI-Agent Certification Track
 
-**Status:** Active
+**Status:** Superseded
 **Owner:** Karthik
 **Date:** 2026-05-30 (study progress + foundation-first order; supersedes the 2026-05-15 cert-FOMO version)
 **Type:** plan
-**Decision of record:** [docs/decisions/002-build-anchored-cert-track.md](../decisions/002-build-anchored-cert-track.md)
+**Decision of record:** [docs/decisions/002-build-anchored-cert-track.md](../../decisions/002-build-anchored-cert-track.md)
+**Superseded by:** [007-ai-fde-study-plan.md](../007-ai-fde-study-plan.md) (2026-10-30). The cert track retired in full; Karthik now learns agent engineering from official cloud docs.
 
 ---
 
@@ -176,9 +177,10 @@ Tactics: pass AIF → AWS auto-grants 50% off MLA; watch Skill Builder promo vou
 ## 8. Decision log
 
 - 2026-05-15 — Original plan: certs as FOMO insurance, AIF → CHP → MLA, AR Triage case study first. *(Superseded.)*
-- 2026-05-29 — Re-anchored to a **build-anchored** track: PractiHR autonomy build is the spine/lab; certs sequenced for durable credibility **AIF → MLA → CCA-F**; CHP parked; AR Triage case study reframed toward PractiHR onboarding autonomy. See [decision 002](../decisions/002-build-anchored-cert-track.md).
+- 2026-05-29 — Re-anchored to a **build-anchored** track: PractiHR autonomy build is the spine/lab; certs sequenced for durable credibility **AIF → MLA → CCA-F**; CHP parked; AR Triage case study reframed toward PractiHR onboarding autonomy. See [decision 002](../../decisions/002-build-anchored-cert-track.md).
 - 2026-05-30 — Switched AIF-C01 study order to **foundation-first (D1→D2→D3→D4→D5)** over the points-optimal D3-first. Captured Domain Review courses + own-words notes for D1, D2, D3 in one session. Built the `/visual-kt` study skill + Professor Claude teaching rule. Deep-discussion/quiz stages deferred behind transcript capture — flagged as the real readiness gate (notes ≠ teach-cold).
+- 2026-10-30: Superseded. AIF-C01, MLA-C01, CCA-F and the parked CHP all retire. The live plan is [007](../007-ai-fde-study-plan.md): agents taught from official Microsoft, Google Cloud and AWS docs, labs on free local models then Azure.
 
 ---
 
-*Last updated: 2026-05-30 · Plan owner: Karthik Ramesh · Strategic advisor: Claude*
+*Last updated: 2026-10-30 · Plan owner: Karthik Ramesh · Strategic advisor: Claude*

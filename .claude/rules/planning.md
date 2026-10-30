@@ -7,7 +7,7 @@ A 3-5 hr/week solo study effort doesn't need OKRs, sprints, story points, or epi
 **Before engaging with any substantive request in this repo, follow this protocol. No exceptions.** This rule exists because drifting from the roadmap is the failure mode that wastes session time, scaffolds the wrong thing, and embarrasses everyone. The protocol is the gate against drift.
 
 1. **Read [`STUDY_LOG.md`](../../STUDY_LOG.md)** — specifically the "Where we are right now" block at the top. It names the current week and the current focus. This is the source of truth for *where in the journey we are*.
-2. **Read the matching section of [`docs/plans/001-roadmap.md`](../../docs/plans/001-roadmap.md)** — find the week-range or cert-section the STUDY_LOG points to. This is the source of truth for *what we're supposed to be doing*.
+2. **Read the matching section of [`docs/plans/007-ai-fde-study-plan.md`](../../docs/plans/007-ai-fde-study-plan.md)**: find the session the STUDY_LOG points to. This is the source of truth for *what we're supposed to be doing*.
 3. **State the orientation back to Karthik in one line** before engaging — *"You're in Week 1-2 per the roadmap, current focus is the case-study deliverable, subject not yet picked. Continuing."* This makes the orientation visible so Karthik can correct it if STUDY_LOG is stale.
 4. **Only then engage with the request.**
 
@@ -28,7 +28,7 @@ Not "study Bedrock for a few hours." Instead:
 - **Acceptance:** Can explain in plain English when to pick Claude vs Titan vs Llama 3, with one HIPAA-relevant trade-off named
 - **Time budget:** 1.5 hours
 
-The roadmap in `docs/plans/001-roadmap.md` provides the *Goal* level (4-month directional plan, three certs, public case study). Weekly entries in `STUDY_LOG.md` are where Deliverable + Acceptance + Time-actual get tracked. Sub-plans (a focused multi-day session, a revision pass before an exam) get their own numbered file in `docs/plans/` using the naming convention defined in `docs/README.md`.
+The live plan, `docs/plans/007-ai-fde-study-plan.md`, provides the *Goal* level (15 agent-engineering sessions; the earlier cert roadmap is archived). Weekly entries in `STUDY_LOG.md` are where Deliverable + Acceptance + Time-actual get tracked. Sub-plans (a focused multi-day session, a revision pass before an exam) get their own numbered file in `docs/plans/` using the naming convention defined in `docs/README.md`.
 
 ## Rules
 

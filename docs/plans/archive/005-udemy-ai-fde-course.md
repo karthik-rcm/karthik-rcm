@@ -1,9 +1,10 @@
 # AI FDE: The Forward Deployed Engineer & Agentic AI Architect
 
-**Status:** Draft
+**Status:** Superseded
 **Owner:** Karthik
 **Date:** 2026-10-30
 **Type:** plan
+**Superseded by:** [007-ai-fde-study-plan.md](../007-ai-fde-study-plan.md) (2026-10-30). The course was not bought; 007 teaches the same 15 topics from official cloud docs.
 
 ---
 
@@ -46,7 +47,7 @@ Udemy course syllabus, captured from the public course page.
 
 - 1 Role Play
 - 21.5 hours on-demand video
-- _(list continues in next batch)_
+- [UNKNOWN: rest of this list not captured. Copy it from the course page.]
 
 ## Study plan (15 sessions, in the course's own order)
 
@@ -73,23 +74,51 @@ One session = one course "Day". Lecture numbers point to the full list below.
 
 ## How we learn it: build, not just watch
 
-- **Cloud: Azure** (decided 2026-10-30). Weeks 1 and 2 are mostly cloud-neutral (OpenRouter, LangChain, LangGraph, Langfuse, Qdrant, Supabase); the model calls move to Azure OpenAI. Week 3's AWS Bedrock AgentCore labs get an Azure equivalent, picked from Microsoft Learn docs at the start of that session, never from memory.
-- **Tradeoff accepted:** the AIF-C01 and MLA-C01 certs are AWS exams, so these labs give them no hands-on practice.
-- **Loop per session:** watch the Day's lectures (about 1.5 hours), read the vendor docs for the one new idea, build that piece, write a short lab note in our own words.
+- **Cloud: Azure** (decided 2026-10-30). Weeks 1 and 2 (Sessions 1 to 10) run on free models: Ollama on the Mac, and OpenRouter's free models, as the course itself does. Azure OpenAI is not free (Microsoft Learn, checked 10/30/2026: per-token billing, no always-free tier), so paid Azure calls start in Week 3, where Azure is the lesson. Week 3's AWS Bedrock AgentCore labs get an Azure equivalent, picked from Microsoft Learn docs, never from memory. Pick the Week 3 mapping once, in Session 11: Sessions 12 to 15 build on one hosting, gateway and memory choice, so choosing piece by piece risks parts that don't fit together.
+- **No AWS tie-in needed:** the AWS cert track is retired (decision log), so Azure costs no exam practice.
+- **Spend guard:** an Azure budget alert goes on in Session 11, before the first paid model call. Session 15 ends with a full teardown and a cost check (W3 lecture 39).
+- **Loop per session:** watch the Day's lectures (about 1.5 hours), read the vendor docs for the one new idea, build that piece, write a short lab note in our own words in the chapter's "Your build" block.
+- **Docs need approval first:** [`docs/sources.md`](../../sources.md) lists LangChain but not Ollama, OpenRouter, Microsoft Learn, LangGraph, Langfuse, Qdrant or Supabase. Add each, on Karthik's OK, before the session that needs it.
+- **Total budget:** 15 sessions at about 4.5 hours (1.5 hours of video, then 3 hours of book work and lab) is about 66 hours, so 13 to 22 weeks at 3 to 5 hours a week.
 - **Skim what's already shipped daily:** W1 D3 (Claude Code, repo hardening, pre-commit hooks).
-- **Synthetic data only.** No PHI, no client data.
+- **Where labs run:** a quick, generic prototype in `fde-field-book/labs/chNN/`, small enough to break and rebuild inside one session. Each lab is modeled on a real RCM product problem (coding suggestions, appeal letters, denial work), with client problems only where they fit. Its data model, prompts and code are our own, never copied from the product or a client. Model calls go to free models in Weeks 1 and 2, and to the Gravitas Azure OpenAI deployment from Week 3. Keys and endpoints come from a gitignored `.env`. Never a client's resources.
+- **Promote what works:** a prototype that solves a real RCM product problem becomes a sprint plan in the product's repo, written and reviewed in that repo under its own rules. That is where it meets the product's real code (row-level security, Celery, its AI provider layer). Prototype code is never pasted in as-is.
+- **Synthetic data only.** No PHI, no client data, nothing copied from the product's staging or production databases.
+
+### Session 0: retire the old track
+
+- **Goal:** make this course the live plan, so the session-start check reads the right file.
+- **Deliverable:**
+  - `docs/decisions/003-<slug>.md`: the retirement, the Gravitas tenant, the generic prototype lab base modeled on RCM product problems, superseding decision 002.
+  - `docs/plans/001-roadmap.md`: status `Superseded`, `Superseded by:` this file, moved to `docs/plans/archive/`.
+  - Repoint every link to the roadmap: `STUDY_LOG.md`, `CLAUDE.md`, `.claude/rules/planning.md` (its session-start protocol reads the roadmap), `docs/README.md`, decision 002, `aif-c01/notes/d3-1-rag-and-foundation-model-app-design.md`. Then run `check-link-depth.sh`.
+  - `STUDY_LOG.md` "Where we are" block: current focus is this course, Session 1.
+  - `aif-c01/exam-log.md`: one line saying the track retired 10/30/2026. Folder stays in place.
+  - `.pre-commit-config.yaml`: a grep hook scoped to `fde-field-book/` that blocks "gravitas", the tenant domain, and the client and product names.
+- **Acceptance:** `grep -rn 001-roadmap` finds only archive and history links, and a test commit with "gravitas" in `fde-field-book/` is blocked.
+- **Budget:** 1 hour.
 
 ### Session 1
 
 - **Goal:** W1 D1, the agent loop from scratch.
-- **Deliverable:** a small Python script (about 50 lines) that calls Azure OpenAI with one tool, written by hand with no framework.
+- **Deliverable:** a small Python script (about 50 lines) that calls a free model with one tool, written by hand with no framework. The model must support tool calling: pick it from the Ollama or OpenRouter docs at the session.
 - **Acceptance:** explain the loop cold: the model asks for a tool, the code runs it, the result goes back, repeat until the model stops asking.
-- **Budget:** 3 hours.
+- **Budget:** 4.5 hours.
+- **Destination:** `fde-field-book/labs/ch01/`. The lab note is Chapter 1's "Your build" block in 006.
+- **Cost:** nothing. No Azure in this session.
 
-### Open
+### Decision log
 
-- Does AIF-C01 pause while this runs, or run side by side?
-- Which real build do the labs anchor to?
+- 2026-10-30: The whole earlier cert track retires: AIF-C01, MLA-C01, CCA-F, and the already parked CHP. This course is the live plan. Roadmap 001 is superseded and archived, and decision 003 records why (Session 0).
+- 2026-10-30: `aif-c01/` stays in place as evidence. Its exam log gets one line marking the track retired.
+- 2026-10-30: A pre-commit grep hook, scoped to `fde-field-book/`, blocks company, client and product names. gitleaks catches secrets, not names. The labs run on the Gravitas tenant and are modeled on client problems.
+- 2026-10-30: Weeks 1 and 2 use free models (Ollama, OpenRouter free models). Azure OpenAI has no free tier, so paid Azure calls start in Week 3, and the budget alert moves to Session 11. The cost: free OpenRouter models have tight rate limits, and Azure habits start later.
+- 2026-10-30: Week 3's Azure labs run on the Gravitas Azure tenant. Personal/CLAUDE.md's "no `az`" line and the reveal gate both still hold for committed files: no Gravitas tenant, subscription, resource or company name lands in this public repo. Lab code reads them from environment variables.
+- 2026-10-30: Labs are a quick generic prototype in `fde-field-book/labs/chNN/`, modeled on real RCM product problems (client workflows where they fit), synthetic data, our own code. Prototypes that prove out become sprint plans in the product's repo under that repo's rules. Karthik chose this over a local worktree of the product: its full stack would eat the lab time, and a prototype can be broken freely. The cost: integration with the product's real code is learned at promotion, not in the labs. Replaces the same day's rulings for the course's own claims project and the local worktree. A deliberate break from [decision 002](../../decisions/002-build-anchored-cert-track.md)'s PractiHR lab spine.
+- 2026-10-30: The book and lab code live in a new top-level `fde-field-book/` folder, approved by Karthik. Lab code goes in `fde-field-book/labs/chNN/`. Lab notes are each chapter's "Your build" block, not a separate file.
+- 2026-10-30: Each session budgets about 4.5 hours: 1.5 hours of video, then 3 hours of book work and lab. An Azure lab plus read-through doesn't fit in 1.5 hours from Chapter 8 on. Same number in 006.
+- 2026-10-30: The Gravitas team gets the field book as the single HTML file, sent directly by Karthik. No hosted copy. LinkedIn gets one post per Part (3 in all). Details in 006, *Sharing and posts*.
+- 2026-10-30: The Udemy course is not bought and no videos are watched. Claude teaches each topic from official cloud documentation (Microsoft, Google Cloud, AWS). A new plan 007 replaces this one, keeping the course's 15-topic order as its outline; this plan is then marked Superseded and archived, and 006 points to 007. How the three clouds split across lessons and labs is still being decided.
 
 ## Curriculum
 
@@ -187,7 +216,7 @@ Legend: (Preview) = free preview on Udemy. (Quiz) = quiz, not a video.
 37. Day 5: Measuring Noise and Building the Improver Agent with Human in the Loop
 38. Day 5: Running the Improver, Improving Its Recipe and Setting Up Supabase Auth
 39. Day 5: Claude Code Builds Self-Improvement and Supabase Sign-In into UnderCover
-40. Day 5: Run Three Improvement Rounds on the ... _(title cut off in the screenshot)_
+40. Day 5: Run Three Improvement Rounds on the [UNKNOWN: title cut off in the screenshot. Copy it from the course page.]
 41. Week 2 Summary Sheet (Document)
 
 ### Week 3: Become an AI FDE
@@ -239,3 +268,4 @@ Legend: (Preview) = free preview on Udemy. (Quiz) = quiz, not a video.
 
 - Captured: Week 1 = 46, Week 2 = 41, Week 3 = 42. Total 129 items.
 - Udemy says 124 lectures. 129 minus 4 quizzes minus 1 role play = 124. Counts match, so no lecture is missing.
+- One title is incomplete: Week 2 lecture 40. The item is counted; its full name is not captured.

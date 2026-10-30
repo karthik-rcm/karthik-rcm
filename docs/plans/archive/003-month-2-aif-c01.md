@@ -4,8 +4,8 @@
 **Owner:** Karthik
 **Dates:** Jun 13 – Jul 18, 2026 (Weeks 5-9)
 **Type:** plan
-**Superseded by:** [001-roadmap.md](../001-roadmap.md) via [decision 002](../../decisions/002-build-anchored-cert-track.md) (2026-05-29). AIF-C01 stays cert 1, but study order is now D3-first (not D2-first), the track isn't month-boxed, and the cert blueprint now lives in roadmap §3. Dates here assumed a case-study-first month that no longer exists.
-**Roadmap ref:** Weeks 3-5 in [001-roadmap.md](../001-roadmap.md), stretched to 5 weeks for 3-5 hrs/week budget
+**Superseded by:** [001-roadmap.md](001-roadmap.md) via [decision 002](../../decisions/002-build-anchored-cert-track.md) (2026-05-29). AIF-C01 stays cert 1, but study order is now D3-first (not D2-first), the track isn't month-boxed, and the cert blueprint now lives in roadmap §3. Dates here assumed a case-study-first month that no longer exists.
+**Roadmap ref:** Weeks 3-5 in [001-roadmap.md](001-roadmap.md), stretched to 5 weeks for 3-5 hrs/week budget
 
 ---
 

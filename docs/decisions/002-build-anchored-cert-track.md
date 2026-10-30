@@ -4,13 +4,13 @@
 **Owner:** Karthik
 **Date:** 2026-05-29
 **Type:** decision
-**Supersedes:** the cert sequence + philosophy in [001-roadmap.md](../plans/001-roadmap.md) (roadmap rewritten the same day to match this decision)
+**Supersedes:** the cert sequence + philosophy in [001-roadmap.md](../plans/archive/001-roadmap.md) (roadmap rewritten the same day to match this decision)
 
 ---
 
 ## Context
 
-The original plan ([001-roadmap.md](../plans/001-roadmap.md), 2026-05-15) framed certs as "insurance against FOMO": **AIF-C01 → CHP → MLA-C01**, with an **AR Triage case study** as the week-1 anchor, all studied as separate exam-prep blocks.
+The original plan ([001-roadmap.md](../plans/archive/001-roadmap.md), 2026-05-15) framed certs as "insurance against FOMO": **AIF-C01 → CHP → MLA-C01**, with an **AR Triage case study** as the week-1 anchor, all studied as separate exam-prep blocks.
 
 Two things changed in the 2026-05-29 session:
 

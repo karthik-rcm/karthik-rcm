@@ -4,8 +4,8 @@
 **Owner:** Karthik
 **Dates:** May 16 – Jun 13, 2026 (Weeks 1-4)
 **Type:** plan
-**Superseded by:** [001-roadmap.md](../001-roadmap.md) via [decision 002](../../decisions/002-build-anchored-cert-track.md) (2026-05-29). Track moved build-first (was case-study-first); case-study subject reframed PractiApp Document Intelligence → PractiHR onboarding-autonomy. The brain-dump → narrative → diagram → ship method below is still good — lift it when the PractiHR case-study week arrives.
-**Roadmap ref:** Weeks 1-2 in [001-roadmap.md](../001-roadmap.md), stretched to 4 weeks for 3-5 hrs/week budget
+**Superseded by:** [001-roadmap.md](001-roadmap.md) via [decision 002](../../decisions/002-build-anchored-cert-track.md) (2026-05-29). Track moved build-first (was case-study-first); case-study subject reframed PractiApp Document Intelligence → PractiHR onboarding-autonomy. The brain-dump → narrative → diagram → ship method below is still good — lift it when the PractiHR case-study week arrives.
+**Roadmap ref:** Weeks 1-2 in [001-roadmap.md](001-roadmap.md), stretched to 4 weeks for 3-5 hrs/week budget
 
 ---
 

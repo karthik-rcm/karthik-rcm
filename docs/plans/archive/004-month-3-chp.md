@@ -4,8 +4,8 @@
 **Owner:** Karthik
 **Dates:** Jul 18 – Aug 22, 2026 (Weeks 10-14)
 **Type:** plan
-**Superseded by:** [001-roadmap.md](../001-roadmap.md) via [decision 002](../../decisions/002-build-anchored-cert-track.md) (2026-05-29). CHP is parked — Karthik lives HIPAA daily; it's not his credibility gap. Revive this plan only if a specific deal demands CHP. New cert 3 is CCA-F (roadmap §5).
-**Roadmap ref:** Weeks 6-8 in [001-roadmap.md](../001-roadmap.md), stretched to 5 weeks for 3-5 hrs/week budget
+**Superseded by:** [001-roadmap.md](001-roadmap.md) via [decision 002](../../decisions/002-build-anchored-cert-track.md) (2026-05-29). CHP is parked — Karthik lives HIPAA daily; it's not his credibility gap. Revive this plan only if a specific deal demands CHP. New cert 3 is CCA-F (roadmap §5).
+**Roadmap ref:** Weeks 6-8 in [001-roadmap.md](001-roadmap.md), stretched to 5 weeks for 3-5 hrs/week budget
 
 ---
 

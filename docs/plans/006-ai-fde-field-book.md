@@ -7,46 +7,49 @@
 
 ---
 
-A companion book for the Udemy course in [005-udemy-ai-fde-course.md](005-udemy-ai-fde-course.md). 15 chapters, one per course Day, each written in its own file and built into one shareable HTML file. We build each chapter, read it together, then go deep on the nuances. Reusable by a team. Each chapter can also become a LinkedIn post.
+The book for the study plan in [007-ai-fde-study-plan.md](007-ai-fde-study-plan.md), taught from official cloud docs with no course or videos. 15 chapters, one per session, each written in its own file and built into one shareable HTML file. We build each chapter, read it together, then go deep on the nuances. Reusable by a team. Each Part ends with one LinkedIn post.
 
 ## Goal
 
 - **Goal:** turn the 21.5-hour course into a book we can learn from, teach from and share.
 - **Deliverable:** one self-contained HTML file with a table of contents, 3 Parts and 15 chapters, built from one source file per chapter. Every structural idea gets an interactive picture.
-- **Acceptance:** for each chapter, Karthik explains its core idea cold and finishes its lab on Azure.
-- **Budget:** about 3 hours per chapter of Karthik's time (read together, nuances, lab). 15 chapters, about 45 hours.
+- **Acceptance:** for each chapter, Karthik explains its core idea cold and finishes its lab on Azure. Proof is the chapter's "Your build" block set to `Status: done`, with what was built and what was measured, and the lab's resources torn down.
+- **Budget:** about 4.5 hours per course Day: about 1.5 hours of video, then about 3 hours of book work (read together, nuances, lab). About 66 hours in all, 13 to 22 weeks at 3-5 hours a week. Settled 2026-10-30; 005 carries the same number.
+- **Roadmap fit:** this course replaces the whole earlier cert track (settled 2026-10-30, see 005's decision log). 005's Session 0 archives the roadmap and updates `STUDY_LOG.md`.
 
 ## How each chapter gets made
 
 1. **Build.** Claude drafts the chapter in its own file: topic sections, interactive pictures, lab spec. Vendor docs are checked live while writing, never from memory. Claude then rebuilds the book and checks it in light and dark.
 2. **Read together.** Karthik reads it. Claude flags the 2 or 3 ideas most worth going deep on.
 3. **Teach the nuances.** Professor mode: short turns, RCM analogies, where it breaks, what the examiner or the client will probe. Good insights go back into the chapter.
-4. **Lab.** Karthik builds the chapter's lab on Azure with synthetic data.
-5. **Post (optional).** One LinkedIn draft from the chapter.
+4. **Lab.** Karthik builds the chapter's lab on Azure with synthetic data. Every lab runs in its own resource group (`rg-fde-chNN`) and ends with `az group delete` and a look at Cost Management. Things like Azure AI Search, PostgreSQL and API Management bill by the hour while idle, not only per call.
+5. **Post (end of each Part only).** After Chapters 5, 10 and 15, one LinkedIn draft built from that Part's measured lab results.
 
 Build chapter N just before Karthik watches Day N, not all 15 up front. Model names, prices and vendor features change monthly, and the read-together step is the quality gate.
 
 ## How the book is built
 
-One source file per chapter, stitched into one HTML file. Editing chapter 5 touches one small file, and readers still get a single file that opens offline.
+One source file per chapter, stitched into one HTML file. Editing chapter 5 touches one small file, and readers still get a single file that opens offline. Offline, the Google Fonts link fails and the page falls back to system fonts; everything else works.
 
 ```
-<book folder>/
+fde-field-book/
   shell.html            page frame and the full 15-chapter contents list
   book.css              the theme, light and dark, shared by every chapter
   book.js               theme button, contents highlighting
   chapters/
     00-front.html       how to read this book
     01-agent-loop.html  one file per chapter, added as we go
+  labs/
+    ch01/               each chapter's prototype: generic, synthetic data, our own code
   build.py              stitches it all into the finished book
-fde-field-book.html     the finished book: the only file anyone opens or shares
+  fde-field-book.html   the finished book: the only file anyone opens or shares
 ```
 
 - **Build step:** `python3 build.py` reads `shell.html`, inlines `book.css` and `book.js`, and inserts the chapter files in filename order. Standard library only, no packages. Claude runs it after every chapter edit.
 - **Contents list:** lives in `shell.html`. A chapter's entry switches from "coming soon" to section links when its file lands.
-- **No clashes between chapters:** every element ID in a chapter starts with its number (`ch01-next`, `ch05-stage`). Each chapter's script is wrapped so its variables stay inside it.
+- **No clashes between chapters:** every element ID in a chapter starts with its number, in the form Chapter 1 already uses for its section anchors (`ch1-1`), so `ch1-next`, `ch5-stage`. Each chapter's script is wrapped so its variables stay inside it. Styles only one chapter needs go in a `<style>` inside its file, every rule scoped under that chapter's section (`#ch5 .stage`), so one chapter's CSS cannot restyle another.
 - **The finished file is the one we commit and share.** Source and output are committed together, so the book on GitHub always matches its sources.
-- **Migration:** Chapter 1 moves from the current single file (`scratch/visuals/fde-course-map.html`) into this layout before Chapter 2 is built. The result must look and behave the same as today in light and dark. The old single file is retired after that.
+- **Migration:** Chapter 1 moves from the current single file (`scratch/visuals/fde-course-map.html`) into this layout before Chapter 2 is built. Its picture's element IDs are not prefixed today (`stage`, `packet`, `b-next`, `narr` and others), so the move renames them to `ch1-` and updates the matching CSS and script lookups. The result must look and behave the same as today in light and dark. The old single file is then retired: moved to Trash, its `.gitignore` exception removed, and the `CLAUDE.md` repo-structure tree updated for the new folder.
 
 ## Chapter shape (Chapter 1 sets it)
 
@@ -55,19 +58,20 @@ fde-field-book.html     the finished book: the only file anyone opens or shares
 - **Professor's notes:** RCM bridges and production reality, marked as our reasoning.
 - **Check yourself:** 3 to 5 questions with click-to-reveal answers.
 - **Your build:** Goal, Deliverable, Acceptance, Budget, Status.
-- **Sources:** the official docs each chapter's code was checked against, with the date.
+- **Sources:** the official docs each chapter's code was checked against, with the date. A docs site cited for the first time (Microsoft Learn, Langfuse, Qdrant, Supabase and Ollama are not in it yet) gets a row in [`docs/sources.md`](../sources.md) in the same change.
 
 ## House rules
 
 - **Our words only.** No lecture transcripts, no course screenshots. The book credits the course and points readers to it.
 - **Synthetic data only.** Made-up claim IDs and results. Real denial codes (CARC) are fine; they are public.
-- **Azure.** Part 3's AWS chapters get Azure equivalents. Candidates below are unverified until checked on Microsoft Learn at chapter time.
+- **Azure.** Part 3's AWS chapters get Azure equivalents. Candidates below are unverified until checked on Microsoft Learn at chapter time. Chapters 1 to 10 use free models (Ollama, OpenRouter free models), so they need no Azure. Azure labs start in Chapter 11, on the Gravitas tenant (005's decision log), so nothing committed names the tenant, subscription, company or the `azt` tag. Lab code reads those from environment variables in a gitignored `.env`, and lab steps say "your Azure tenant", never a tag.
 - **No client names, no PHI, no fingerprinting numbers**, same as the rest of this repo.
+- **Labs are generic prototypes of real problems.** Each lab in `labs/chNN/` is modeled on a real RCM product problem (007's decision log), but its data model, prompts and code are our own. Nothing in this repo names a client or product, or copies their code.
 - **Its own look.** Indigo and amber on a dot grid, Space Grotesk and IBM Plex fonts, light and dark. Not borrowed from any company website, so the public copy stays neutral.
 
 ## Outline
 
-Lecture numbers point to the curriculum in [005](005-udemy-ai-fde-course.md). Quizzes and summary sheets are not mapped. "Picture" lists the planned interactive visual.
+Lecture numbers point to the outline of the course 007 replaced, in [archived plan 005](archive/005-udemy-ai-fde-course.md), and stay only as a cross-reference. Each chapter's sections and lab are re-specified against official docs when it is built (007, *How each session works*). Quizzes, summary sheets and the bonus document (W3 42) are not mapped. Two recap lectures (W1 9, W2 1) sit inside their chapter's lecture range but get no section of their own. "Picture" lists the planned interactive visual.
 
 ### Part 1 · Week 1: Foundations
 
@@ -75,8 +79,8 @@ Lecture numbers point to the curriculum in [005](005-udemy-ai-fde-course.md). Qu
 - 1.1 Watch the loop run (1-2). Picture: built, 3 scenarios.
 - 1.2 What the model actually sees: the tool menu (2). Built.
 - 1.3 The FDE role: engineer to architect to FDE (3-5). Picture: role ladder with skills per rung.
-- 1.4 Setup and planning API cost (6-8). Azure checklist: resource, model deployment, `az login`, keyless auth.
-- Lab: the 50-line loop on Azure OpenAI, Responses API, one tool.
+- 1.4 Setup and planning API cost (6-8). Free-model checklist: install Ollama, pull one model that supports tool calling, get an OpenRouter key into a gitignored `.env`. No Azure until Chapter 11.
+- Lab: the 50-line loop on a free model (Ollama or OpenRouter), one tool.
 
 **Chapter 2. Frontier LLMs and your first claims agent** (W1 D2, lectures 9-17)
 - 2.1 Tokens, context windows and API cost (10). Picture: cost-per-claim calculator.
@@ -84,7 +88,7 @@ Lecture numbers point to the curriculum in [005](005-udemy-ai-fde-course.md). Qu
 - 2.3 What an agent is: tools, harness, framework (12). Picture: layer diagram.
 - 2.4 Structured outputs (14). Picture: free text vs schema-checked JSON.
 - 2.5 First claims agent with LangChain `create_agent` (13, 15-17).
-- Lab: `create_agent` on an Azure OpenAI deployment, 2 tools, 10 synthetic claims, 2 models compared.
+- Lab: `create_agent` on free models, 2 tools, 10 synthetic claims, 2 models compared (one local on Ollama, one on OpenRouter).
 
 **Chapter 3. Coding agents and the ADLC** (W1 D3, lectures 19-27). Light chapter: Karthik ships this daily.
 - 3.1 The coding agent landscape (19-21).
@@ -140,7 +144,7 @@ Lecture numbers point to the curriculum in [005](005-udemy-ai-fde-course.md). Qu
 - 9.1 Teams vs swarms vs fleets (27).
 - 9.2 A dispatcher with no LLM: fan-out, rate limits, retries (28-29). Picture: 25 claims fanning out, a rate-limit error and a retry.
 - 9.3 Running and scoring a swarm (30-32).
-- Lab: 5, then 25 claim agents against Azure OpenAI quota limits.
+- Lab: 5, then 25 claim agents against free-model rate limits, which makes the retry and rate-limit lesson real.
 
 **Chapter 10. LLM as a judge and the improver agent** (W2 D5, lectures 34-40)
 - 10.1 LLM as a judge with reference answers (34, 36).
@@ -158,7 +162,7 @@ Lecture numbers point to the curriculum in [005](005-udemy-ai-fde-course.md). Qu
 - 11.4 Governance and autonomy levels (4). Picture: autonomy ladder.
 - 11.5 Responsible AI, privacy, accountability, handover (5-6).
 - 11.6 Cloud setup, Azure version of the AWS steps (7-9).
-- Lab: Azure budget alert, least-privilege identity, a Python check of the setup.
+- Lab: Azure budget alert before the first paid model call, least-privilege identity, and a Python check of the setup.
 
 **Chapter 12. Agent security, guardrails, gateways** (W3 D2, lectures 10-19)
 - 12.1 Security risks: sandboxes, API scopes, prompt injection (10).
@@ -192,11 +196,15 @@ Lecture numbers point to the curriculum in [005](005-udemy-ai-fde-course.md). Qu
 
 ## Sharing and posts
 
-- **Team copy:** the book is written for any reader with RCM context, not only Karthik. Where it lives and how it is shared is open below.
-- **LinkedIn:** drafts live in `~/Application/gravitas-marketing/`, not this repo. Every post leads with time, effort or money, and every number comes from our own labs.
+- **Team copy:** the book is written for any reader with RCM context, not only Karthik. The Gravitas team gets the finished `fde-field-book.html` as a file, which Karthik sends by email or Teams after a rebuild. No hosted copy. The book itself names no company (house rules, enforced by 005 Session 0's grep hook), so the file carries no public link between `@karthikrcm` and Gravitas.
+- **LinkedIn:** one post per Part, 3 in all, after Chapters 5, 10 and 15. Drafts live in `~/Application/Gravitas/gravitas-marketing-engine/`, not this repo. Every post leads with time, effort or money, and every number comes from our own labs.
 
-## Open
+## Decisions (all settled 2026-10-30)
 
-- Which team gets the book, and how: a private web link or the HTML file?
-- Where the book folder lives. Recommended: a new top-level `fde-field-book/` folder, since this repo's rules need Karthik's OK for any new top-level folder. The other option is `scratch/visuals/fde-field-book/` with a `.gitignore` exception, which keeps committed work inside a folder named "scratch".
-- LinkedIn cadence: one post per chapter or one per Part?
+- Team and delivery: settled 2026-10-30, the Gravitas team, the HTML file sent directly. See *Sharing and posts*.
+- Book folder: settled 2026-10-30, top-level `fde-field-book/` (Karthik's OK). See 005's decision log.
+- Lab code: settled 2026-10-30, a generic prototype in `fde-field-book/labs/chNN/`. See 005's decision log.
+- LinkedIn cadence: settled 2026-10-30, one post per Part. See *Sharing and posts*.
+- Cert track: settled 2026-10-30, all earlier certs retired. See 005's decision log.
+- Budget: settled 2026-10-30, about 4.5 hours per Day including video. See Goal.
+- Reveal gate: settled 2026-10-30. Holds because the book names no company and goes out as a file, not a public link.

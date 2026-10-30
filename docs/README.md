@@ -17,7 +17,7 @@ Consolidated home for plans, drafts, and decision records. The repo's *public-fa
 
 ## Naming conventions
 
-- **Plans:** `NNN-<slug>.md` — numbered sequentially starting at `001-`, lowercase kebab-case slug. The master roadmap is `001-roadmap.md`. Sub-plans pick up the next number when written. The number never changes once assigned; a superseded plan keeps its number, flips status to `Superseded`, gets a `Superseded by:` pointer, and moves to `plans/archive/`.
+- **Plans:** `NNN-<slug>.md` — numbered sequentially starting at `001-`, lowercase kebab-case slug. The live master plan is `007-ai-fde-study-plan.md` (the original `001-roadmap.md` is archived). Sub-plans pick up the next number when written. The number never changes once assigned; a superseded plan keeps its number, flips status to `Superseded`, gets a `Superseded by:` pointer, and moves to `plans/archive/`.
 - **Drafts:** descriptive slug, no number prefix (these get renamed or moved when they graduate). Add `-vN` if you iterate.
 - **Decisions:** `NNN-<slug>.md` — same numbering scheme as plans (their own sequence, starting at `001-`). If a decision gets reversed, write a new ADR that supersedes the old one; don't edit history.
 

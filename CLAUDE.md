@@ -32,7 +32,7 @@ Long responses are reserved for: deliberate plan documents, file content being w
 **This repo is anchored on a roadmap. Every session orients against the roadmap before engaging.** The protocol is a hard gate, not a suggestion — drift from the roadmap is the failure mode that wastes session time and scaffolds the wrong thing.
 
 1. **Read [`STUDY_LOG.md`](STUDY_LOG.md)** — the "Where we are right now" block at the top names the current week and current focus. Source of truth for *where we are*.
-2. **Read the matching section of [`docs/plans/001-roadmap.md`](docs/plans/001-roadmap.md)** — the week-range or cert-section STUDY_LOG points to. Source of truth for *what we should be doing*.
+2. **Read the matching section of [`docs/plans/007-ai-fde-study-plan.md`](docs/plans/007-ai-fde-study-plan.md)**: the session STUDY_LOG points to. Source of truth for *what we should be doing*.
 3. **State orientation back to Karthik in one line** — *"You're in Week N per the roadmap, current focus is X. Continuing."* If STUDY_LOG is stale or the request doesn't match the current focus, surface the mismatch instead of silently doing what was asked.
 4. **Only then engage.**
 
@@ -106,7 +106,7 @@ Do NOT scaffold `portfolio.md`, `profile.md`, `bio.md`, a landing page, or marke
 
 ## Study plan context
 
-The roadmap is in [docs/plans/001-roadmap.md](docs/plans/001-roadmap.md). Key facts that shape every session:
+The live plan is [docs/plans/007-ai-fde-study-plan.md](docs/plans/007-ai-fde-study-plan.md) (since 2026-10-30; the cert track below is retired and kept for history, see [the archived roadmap](docs/plans/archive/001-roadmap.md)). Key facts from the retired track:
 
 - **Time budget:** 3-5 hrs/week (light). Adjusted timeline ~28-32 weeks, not the 16 the plan was sized for.
 - **Start date:** 2026-05-16 (Week 1 = AR Triage case study).
@@ -228,7 +228,7 @@ karthik-rcm/
 |---|---|---|
 | `README.md` | Public positioning. Recruiter/client-facing. | Rare — only when positioning shifts |
 | `STUDY_LOG.md` | Weekly progress + confidence scores. | Weekly |
-| `docs/plans/001-roadmap.md` | Master 16-week roadmap (3 certs + case study). | Rare — only when cert sequence changes |
+| `docs/plans/007-ai-fde-study-plan.md` | Live study plan: 15 agent-engineering sessions from official cloud docs. | Per session (status) and per decision |
 | `docs/plans/NNN-*.md` | Sub-plans (sessions, revision passes). | Per planning session |
 | `docs/drafts/*.md` | Brain-dumps, narrative iterations, in-flight drafts. | Per drafting session |
 | `docs/decisions/NNN-*.md` | Decision records — what we chose and why. | Per non-obvious decision |
