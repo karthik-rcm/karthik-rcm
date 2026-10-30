@@ -1,10 +1,11 @@
 # 002 — Reframe the cert track: build-anchored AIF → MLA → CCA-F (CHP parked)
 
-**Status:** Active
+**Status:** Superseded
 **Owner:** Karthik
 **Date:** 2026-05-29
 **Type:** decision
 **Supersedes:** the cert sequence + philosophy in [001-roadmap.md](../plans/archive/001-roadmap.md) (roadmap rewritten the same day to match this decision)
+**Superseded by:** [003-retire-cert-track-for-fde-field-book.md](003-retire-cert-track-for-fde-field-book.md) (2026-10-31)
 
 ---
 

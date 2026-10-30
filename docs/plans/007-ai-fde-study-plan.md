@@ -1,4 +1,4 @@
-# AI FDE Study Plan: agents, taught from official cloud docs
+# AI FDE Study Plan: agents, taught from official docs
 
 **Status:** Draft
 **Owner:** Karthik
@@ -8,7 +8,7 @@
 
 ---
 
-Learn to build and ship AI agents the way a forward deployed engineer (FDE) does: on the client's problem, on the client's cloud. No course and no videos. Claude teaches each topic from official documentation (Microsoft Learn, Google Cloud docs, AWS docs) through the chapters of the field book in [006](006-ai-fde-field-book.md). The 15-topic order comes from the outline of the Udemy course in 005, which was not bought (now [archived](archive/005-udemy-ai-fde-course.md)).
+Learn to build and ship AI agents the way a forward deployed engineer (FDE) does: on the client's problem, on the client's cloud. No course and no videos. Claude teaches each topic from official documentation (Microsoft Learn, Google Cloud docs and AWS docs for the clouds, each tool's own docs otherwise) through the chapters of the field book in [006](006-ai-fde-field-book.md). The 15-topic order comes from the outline of the Udemy course in 005, which was not bought (now [archived](archive/005-udemy-ai-fde-course.md)).
 
 ## Goal
 
@@ -19,7 +19,7 @@ Learn to build and ship AI agents the way a forward deployed engineer (FDE) does
 
 ## How each session works
 
-1. **Draft.** Claude writes the chapter from official docs checked that day, with interactive pictures and a lab spec. Built just before the session, not ahead, because models, prices and features change monthly.
+1. **Draft.** Claude writes the chapter from official docs checked that day, with interactive pictures and a lab spec. It covers every course lecture 006's outline maps to that chapter, by name. Built just before the session, not ahead, because models, prices and features change monthly.
 2. **Read together.** Karthik reads it. Claude flags the 2 or 3 ideas most worth going deep on.
 3. **Deep dive.** Short turns, RCM examples, where it breaks, what a client will ask.
 4. **Three clouds.** One short table: how Azure, Google Cloud and AWS each do this topic, each from its own docs.
@@ -28,11 +28,12 @@ Learn to build and ship AI agents the way a forward deployed engineer (FDE) does
 
 ## Ground rules
 
-- **Official docs only.** Microsoft Learn, Google Cloud docs, AWS docs, each with the date checked. A topic none of them covers is flagged, never taught from memory. A docs site cited for the first time gets a row in [`docs/sources.md`](../sources.md) on Karthik's OK.
-- **Free first.** Sessions 1 to 10 run on free local models (Foundry Local on the Mac). No cloud spend.
+- **Official docs only.** Each topic is taught from its own vendor's or project's docs, with the date checked: Microsoft Learn, Google Cloud docs and AWS docs for cloud services; the project's own docs for an open tool or standard (for example the MCP specification, Ollama, LangChain). Blogs, forums and memory never count. A topic with no official docs is flagged, never taught from memory. A docs site cited for the first time gets a row in [`docs/sources.md`](../sources.md) on Karthik's OK.
+- **No topic dropped.** All 129 lectures of the course outline (archived 005) map to a section in 006's outline. Checked on 10/31/2026 two ways: a one-off script matched every lecture number, and an independent review read every lecture title against its section. The review's 19 gaps were then fixed and re-checked. Lecture W2 40's title is cut off in 005, so it stays unchecked. The script is not saved in the repo. A chapter is not done until every lecture mapped to it is covered, or the chapter says why one is covered only in the three-cloud table.
+- **Free first.** Sessions 1 to 10 run on free local models (Foundry Local on the Mac), except Session 3, which uses Karthik's existing Claude Code plan. No new spend.
 - **Azure from Session 11.** Hands-on cloud labs run on Azure, on Karthik's business tenant (named only in the gitignored `.env`). Google Cloud and AWS are covered by the comparison table, not by labs. An Azure budget alert goes on in Session 11 before the first paid call. Each lab uses its own resource group and is deleted after. Session 15 ends with a full teardown and a cost check.
 - **Generic prototypes of real problems.** Each lab is modeled on a real problem from an RCM product Karthik works on (coding suggestions, appeal letters, denial work), or a client workflow where it fits. Data model, prompts and code are our own. A prototype that proves out becomes a sprint plan in that product's repo, under its rules.
-- **Nothing identifying in this public repo.** No company, tenant, subscription, product or client names, anywhere in the repo, plans included. Tenant and resource names come from a gitignored `.env`. The blocked names live in a gitignored `.name-guard` file, never in a committed file. No code copied from client or product repos. No PHI, synthetic data only.
+- **Nothing identifying in this public repo.** No client names anywhere. No product, tenant or subscription names in plan, decision, book or lab text written from 10/30/2026 on; older history, archived plans and CLAUDE.md's capability list name some products (open below). The company name stays out of the book and labs (`fde-field-book/`); the rest of the repo already names it. Tenant and resource names come from a gitignored `.env`. The blocked names live in a gitignored `.name-guard` file, never in a committed file. No code copied from client or product repos. No PHI, synthetic data only.
 
 ## Sessions
 
@@ -40,15 +41,15 @@ Learn to build and ship AI agents the way a forward deployed engineer (FDE) does
 |---:|---|---|---|
 | 1 | The agent loop from scratch; the FDE role | Hand-written loop, one tool, no framework | Free |
 | 2 | Tokens, context, cost; structured output; first claims agent | Agent with 2 tools on 10 synthetic claims, 2 local models compared | Free |
-| 3 | Coding agents and the agent development lifecycle (light: done daily) | Claude Code plans a pilot in phases with success criteria | Free |
+| 3 | Coding agents and the agent development lifecycle (light: done daily) | Claude Code plans a pilot in phases with success criteria | Free (existing Claude Code plan) |
 | 4 | Open vs proprietary models, local inference, quantization, cost per claim | Two local models on accuracy and speed; cloud cost per claim worked from pricing pages | Free |
 | 5 | Harness engineering, sub-agents, build vs buy | A main agent hands a task to a sub-agent | Free |
-| 6 | Architecture traps, evals (precision, recall, kappa), tracing | An eval set and traces for the claims agent | Free |
-| 7 | Retrieval (RAG), MCP, short and long-term memory | Retrieval over synthetic payer policies, exposed as an MCP tool | Free |
+| 6 | Architecture traps, evals (precision, recall, kappa), tracing | An eval set and traces for the claims agent; two versions compared as experiments | Free |
+| 7 | Retrieval (RAG), MCP, short and long-term memory | Retrieval over synthetic payer policies, exposed as an MCP tool; long-term memory, compared with and without | Free |
 | 8 | Durable workflows, checkpoints, human sign-off | A claim that pauses for approval, survives a killed process, resumes | Free |
 | 9 | Many agents: fan-out, rate limits, retries | 5, then 25 claim agents with a concurrency cap and retries, against a local stand-in that rejects calls over a set rate (a local model has no rate limit of its own) | Free |
 | 10 | LLM as a judge, an improver loop with human approval | A judge plus 3 approved improvement rounds | Free |
-| 11 | Discovery, governance, responsible AI, cloud setup | Azure budget alert, least-privilege identity, setup check | Paid |
+| 11 | Discovery, governance, responsible AI, cloud setup | Azure budget alert, least-privilege identity, setup check; a keyless model deployment reruns Session 4's claims test | Paid |
 | 12 | Agent security: prompt injection, guardrails, gateways, policy | Catch an injection; put a gateway and a policy in front of a tool | Paid |
 | 13 | The enterprise context layer, integrations, managed memory | A context service as an MCP server with identity-based auth | Paid |
 | 14 | Production: configuration, secrets, managed runtime | Deploy the claims agent, run 25, sign off and send back | Paid |
@@ -60,11 +61,11 @@ Which Azure service backs each paid lab is picked from Microsoft Learn at that s
 
 - **Goal:** make this the live plan, so the session-start check reads the right file.
 - **Deliverable:**
-  - `docs/decisions/003-<slug>.md`: retiring the cert track and the Udemy course, Azure labs on Karthik's business tenant, generic prototypes modeled on real RCM product problems, superseding decision 002. Written without company, product or client names.
+  - Done 2026-10-31: [`docs/decisions/003-retire-cert-track-for-fde-field-book.md`](../decisions/003-retire-cert-track-for-fde-field-book.md): retiring the cert track and the Udemy course, Azure labs on Karthik's business tenant, generic prototypes modeled on real RCM product problems, superseding decision 002. Written without company, product or client names.
   - Done 2026-10-30: 001 and 005 superseded and archived, every link repointed, `STUDY_LOG.md` "Where we are" block set to this plan.
   - Done 2026-10-30: `aif-c01/` removed (moved to Trash; committed versions stay in git history). `/aiprof`, `/visual-kt` and `/quiz` retired; `/brainstorm` repointed at field-book chapters. CLAUDE.md, docs/README.md, docs/sources.md and the consistency, planning and professor rules now point at `fde-field-book/`. Past STUDY_LOG weeks and decision 001 keep their old paths as history.
-  - Scrub the uncommitted working copies of 006 and `archive/005` before anything is committed: both name the product and clients today (006 line 69; archive/005 lines 85, 92, 97, 114, 117). Same generic wording as this plan.
-  - Reconcile 006 with this plan. 006 still describes the course it replaced: "the 21.5-hour course" and "about 4.5 hours per course Day" with video (Goal, Budget, Decisions), "before Karthik watches Day N", "finishes its lab on Azure" for every chapter (Acceptance, step 4), Ollama and OpenRouter where this plan uses Foundry Local, a Chapter 4 lab with an Azure deployment inside the free sessions, the Claude Agent SDK (Chapter 5) and LangGraph's `interrupt()` (Chapter 8) where this plan now uses Microsoft Agent Framework, and "005's decision log" and "005 Session 0's grep hook" where this plan now owns both.
+  - Done 2026-10-30, before commit b1ff49a: scrubbed the product and client names from 006 and `archive/005`, using the same generic wording as this plan.
+  - Done 2026-10-31, plus every course lecture mapped to a section: Reconcile 006 with this plan. 006 described the course it replaced, and each of these is now fixed: "the 21.5-hour course" and "about 4.5 hours per course Day" with video (Goal, Budget, Decisions), "before Karthik watches Day N", "finishes its lab on Azure" for every chapter (Acceptance, step 4), Ollama and OpenRouter where this plan uses Foundry Local, a Chapter 4 lab with an Azure deployment inside the free sessions, the Claude Agent SDK (Chapter 5) and LangGraph's `interrupt()` (Chapter 8) where this plan now uses Microsoft Agent Framework, and "005's decision log" and "005 Session 0's grep hook" where this plan now owns both.
   - Done 2026-10-30: `.gitignore`: add `.name-guard`. Create `.name-guard` locally with one blocked name per line: the client and product names, the tenant domain.
   - Done 2026-10-30, all four acceptance cases tested: `.pre-commit-config.yaml`: a local `name-guard` hook that reads `.name-guard`, checks only the added lines of every staged file (`git diff --cached -U0`), case-insensitive, whole word. It fails closed: a missing or empty `.name-guard` blocks the commit with a message saying to create it. The `.name-guard` list applies repo-wide, not only `fde-field-book/`, because plans and decisions leak names too. Those names never appear in the hook config. The company name is blocked only in added lines under `fde-field-book/`, so the book and labs stay clean while edits to files that already name it (CLAUDE.md, README.md, rules, skills) still commit. It can sit in the hook config, since it is already public in the repo.
   - `docs/sources.md`: rows for the Microsoft Learn Foundry Local and Agent Framework docs, on Karthik's OK, so Session 1 can cite them. Google Cloud docs get their row at the first session that cites them.
@@ -85,6 +86,7 @@ Which Azure service backs each paid lab is picked from Microsoft Learn at that s
 
 ## Open
 
+- Product names in CLAUDE.md's capability list and the `/brainstorm` skill's examples, in this public repo. <!-- decision needed: keep them (they may already be public), or replace them with generic wording and add them to .name-guard -->
 - Monthly Azure budget alert amount for Sessions 11 to 15. Needed before Session 11; Sessions 0 to 10 are not blocked by it. <!-- decision needed: monthly budget alert amount (recommended $50, alerts at 50/80/100% actual plus a forecast alert). Karthik left this undecided on 10/30/2026. -->
 
 ## Decision log
@@ -94,10 +96,10 @@ Which Azure service backs each paid lab is picked from Microsoft Learn at that s
 - 2026-10-30: Each topic gets a three-cloud comparison (Azure, Google Cloud, AWS), because Karthik's clients run on all three. Hands-on cloud labs run on Azure only: one account, one budget, one teardown.
 - 2026-10-30: Sessions 1 to 10 use free local models. Foundry Local runs on macOS (Apple Silicon) and supports tool calling (Microsoft Learn, checked 10/30/2026). Azure OpenAI has no free tier, so paid calls start in Session 11.
 - 2026-10-30: Azure labs run on Karthik's business tenant. Nothing identifying it lands in this public repo.
-- 2026-10-30: Labs are generic prototypes in `fde-field-book/labs/chNN/`, modeled on real RCM product problems, client workflows where they fit. Chosen over a local worktree of the product: the full stack would eat lab time. Integration with the product's real code is learned when a prototype is promoted to a sprint in that repo. A deliberate break from [decision 002](../decisions/002-build-anchored-cert-track.md)'s PractiHR lab spine.
+- 2026-10-30: Labs are generic prototypes in `fde-field-book/labs/chNN/`, modeled on real RCM product problems, client workflows where they fit. Chosen over a local worktree of the product: the full stack would eat lab time. Integration with the product's real code is learned when a prototype is promoted to a sprint in that repo. A deliberate break from [decision 002](../decisions/002-build-anchored-cert-track.md)'s product-build lab spine.
 - 2026-10-30: The book and labs live in a new top-level `fde-field-book/` folder, approved by Karthik. Lab notes are each chapter's "Your build" block.
 - 2026-10-30: A pre-commit name-guard hook blocks company, product and client names in added lines anywhere in the repo. The list lives in a gitignored `.name-guard` file, because a list in the committed hook config would publish the names it guards. gitleaks catches secrets, not names.
-- 2026-10-30: Labs from Session 2 use Microsoft Agent Framework (Python). It runs on Foundry Local through `FoundryLocalClient` in the free sessions, has workflow checkpoints and human sign-off for Session 8, and moves to Azure in Session 11 without a framework change (Microsoft Learn, checked 10/30/2026). Google's and AWS's own agent kits are covered in the comparison tables only. Chosen over LangGraph, which no cloud vendor documents as its own, and over hand-written loops past Session 1.
+- 2026-10-30: Labs from Session 2 use Microsoft Agent Framework (Python). It runs on Foundry Local through `FoundryLocalClient` in the free sessions, has workflow checkpoints and human sign-off for Session 8, and moves to Azure in Session 11 without a framework change (Microsoft Learn, checked 10/30/2026). Google's and AWS's own agent kits are covered in the comparison tables only. Chosen over LangGraph, because Agent Framework covers the same checkpoints and sign-off and is documented on Microsoft Learn beside the Azure services the paid labs use; and over hand-written loops past Session 1.
 - 2026-10-30: The company name is blocked only under `fde-field-book/`. Client and product names stay blocked repo-wide. The repo already names the company in 16 tracked files, and README.md shows a company email address.
 - 2026-10-30: The Azure budget alert notifies only. Azure budgets cannot stop spending; the per-lab resource group delete is the cost control.
 - 2026-10-30: `/aiprof`, `/visual-kt` and `/quiz` retire with the certs: this plan's session loop does their jobs. `/brainstorm` stays as the deep-dive step and writes into the chapter.
