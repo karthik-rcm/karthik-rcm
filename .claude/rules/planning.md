@@ -23,10 +23,10 @@ Every weekly study session, case-study deliverable, or cert milestone is structu
 
 Not "study Bedrock for a few hours." Instead:
 
-- **Goal:** Cover AIF-C01 Domain 3 (Foundation Models) section 3.1 (selection criteria)
-- **Deliverable:** 15 flashcards in `aif-c01/flashcards/d3-foundation-models.md` + a notes file
-- **Acceptance:** Can explain in plain English when to pick Claude vs Titan vs Llama 3, with one HIPAA-relevant trade-off named
-- **Time budget:** 1.5 hours
+- **Goal:** Session 1, the agent loop from scratch
+- **Deliverable:** a ~50-line script in `fde-field-book/labs/ch01/` that calls a local model with one tool, plus Chapter 1's "Your build" block filled in
+- **Acceptance:** Can explain the loop cold: the model asks for a tool, the code runs it, the result goes back, repeat until it stops asking
+- **Time budget:** 3 hours
 
 The live plan, `docs/plans/007-ai-fde-study-plan.md`, provides the *Goal* level (15 agent-engineering sessions; the earlier cert roadmap is archived). Weekly entries in `STUDY_LOG.md` are where Deliverable + Acceptance + Time-actual get tracked. Sub-plans (a focused multi-day session, a revision pass before an exam) get their own numbered file in `docs/plans/` using the naming convention defined in `docs/README.md`.
 
@@ -35,7 +35,7 @@ The live plan, `docs/plans/007-ai-fde-study-plan.md`, provides the *Goal* level 
 - **No vague study sessions.** "Read about Bedrock" is not a session plan. "Read AWS Bedrock developer guide chapters 1-3 and write 10 flashcards on inference parameters" is. If Karthik proposes a vague session, restate it in Goal/Deliverable/Acceptance/Budget form before he starts.
 - **Acceptance criterion is producible, not consumable.** "Read the docs" is consumption — easy to fake, impossible to verify. "Write 10 flashcards" or "explain X in 3 sentences in `notes/`" is production — there's an artifact, and the artifact's quality is visible.
 - **Time estimates in hours, not weeks.** A 16-week plan run at 3-5 hrs/week is really ~60-80 hours total. Track in hours so the budget is real. Calendar weeks are for the master plan; hours are for the session.
-- **Every deliverable has a destination file.** A note exists or it doesn't. "I covered IAM policies" with no file in `aif-c01/notes/` did not happen. The file is the proof of work.
+- **Every deliverable has a destination file.** A note exists or it doesn't. "I covered tool calling" with no lab in `fde-field-book/labs/` and no "Your build" block did not happen. The file is the proof of work.
 - **Confidence scores update at session close.** When a session ends, update the relevant domain's confidence score in `STUDY_LOG.md` if it shifted. Confidence is the lightweight signal that tells us whether to slow down on a domain or move on.
 - **Defer scaffolding until needed.** Don't create `chp/` or `mla-c01/` folders until Karthik is in week 6 or week 9. Don't pre-fill `notes/` with empty domain files. Empty folders and stub files are noise that makes real work harder to see.
 

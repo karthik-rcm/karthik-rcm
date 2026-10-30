@@ -13,7 +13,7 @@ Consolidated home for plans, drafts, and decision records. The repo's *public-fa
 
 **Top-level files in `docs/`:**
 
-- `sources.md` — authoritative source list. Every URL `/aiprof` is allowed to cite from. Off-list URLs require approval before fetching. The skill enforces this.
+- `sources.md` — authoritative source list. Every URL a field-book chapter is allowed to cite from. Off-list URLs require approval before fetching.
 
 ## Naming conventions
 
@@ -50,7 +50,7 @@ Don't skip the header — it's how a quick `ls` + `head` tells us what's live vs
 
 ## What does NOT belong here
 
-- Study artifacts (notes, flashcards, exam logs, labs) — those live under `aif-c01/`, future `chp/`, future `mla-c01/`.
+- Study artifacts (chapters, labs): those live under `fde-field-book/`.
 - Final case-study narrative — that's `case-study-ar-triage/narrative.md`, not a draft.
 - Marketing copy or LinkedIn posts — those live in `~/Application/gravitas-marketing/`.
 - Anything ephemeral / scratch that won't survive the week — keep it in `/tmp/` or your scratch dir, not here.

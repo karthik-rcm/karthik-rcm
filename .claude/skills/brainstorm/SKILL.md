@@ -1,6 +1,6 @@
 ---
 name: brainstorm
-description: Socratic study skill — discuss a fuzzy concept through seven lenses (Examiner, Test Writer, Student, Enterprise CEO + Solution Architect, Security Officer / HIPAA Officer, Cloud Engineer, Cybersecurity) until Karthik can teach it cold. Adaptive dialogue, not a fixed pass count. Fire 2-4 lenses per round. Converges to a notes file, flashcards, and a STUDY_LOG entry. Use for AIF-C01 / CHP / MLA-C01 concept understanding and AR Triage case-study thinking.
+description: Socratic study skill — discuss a fuzzy concept through seven lenses (Examiner, Test Writer, Student, Enterprise CEO + Solution Architect, Security Officer / HIPAA Officer, Cloud Engineer, Cybersecurity) until Karthik can teach it cold. Adaptive dialogue, not a fixed pass count. Fire 2-4 lenses per round. Converges to an update of the field-book chapter's source file and a STUDY_LOG entry. Use for the deep-dive step of a plan 007 session and AR Triage case-study thinking.
 disable-model-invocation: false
 user-invocable: true
 argument-hint: "[concept or topic, optional] [--drill]"
@@ -16,11 +16,11 @@ You invoke this when you have a concept you're studying but don't yet *understan
 - *"Help me think through the AR Triage architecture before I draft the case study."*
 - *"Brainstorm the foundation-model-selection criteria from AIF-C01 Domain 3."*
 
-The skill runs an **adaptive Socratic discussion** through seven study-specific lenses (Examiner, Test Writer, Student, CEO+SA, Security Officer, Cloud Engineer, Cybersecurity), firing 2-4 lenses per round based on what the concept actually needs. It ends by writing a notes file (and optionally flashcards) that proves understanding *and* updates the relevant confidence score in `STUDY_LOG.md`. It does **not** generate practice questions, build labs, or update the master roadmap. Those are separate jobs.
+The skill runs an **adaptive Socratic discussion** through seven study-specific lenses (Examiner, Test Writer, Student, CEO+SA, Security Officer, Cloud Engineer, Cybersecurity), firing 2-4 lenses per round based on what the concept actually needs. It ends by folding what was learned into the chapter's source file in `fde-field-book/chapters/` *and* updating the relevant confidence score in `STUDY_LOG.md`. It does **not** generate practice questions, build labs, or update the study plan. Those are separate jobs.
 
 ## Project context
 
-!`echo "🧭 Where we are (from STUDY_LOG.md):" && grep -E "Current week|Current focus|Last updated" STUDY_LOG.md 2>/dev/null | head -3 || echo "  STUDY_LOG.md not found — run session-start protocol manually" && echo "" && echo "Repo: $(basename "$(git rev-parse --show-toplevel 2>/dev/null || pwd)")" && echo "Branch: $(git branch --show-current 2>/dev/null || echo 'unknown')" && echo "Existing notes:" && find aif-c01/notes chp/notes mla-c01/notes -maxdepth 2 -type f -name "*.md" 2>/dev/null | head -5 || true`
+!`echo "🧭 Where we are (from STUDY_LOG.md):" && grep -E "Current week|Current focus|Last updated" STUDY_LOG.md 2>/dev/null | head -3 || echo "  STUDY_LOG.md not found — run session-start protocol manually" && echo "" && echo "Repo: $(basename "$(git rev-parse --show-toplevel 2>/dev/null || pwd)")" && echo "Branch: $(git branch --show-current 2>/dev/null || echo 'unknown')" && echo "Existing chapters:" && find fde-field-book/chapters -maxdepth 1 -type f -name "*.html" 2>/dev/null | sort | head -20 || true`
 
 ## How the skill runs
 
@@ -41,19 +41,17 @@ See [.claude/rules/thinking.md](../../rules/thinking.md). Fires when the concept
 
 ### Lens 2 — `consistency.md` (match the repo's conventions)
 
-See [.claude/rules/consistency.md](../../rules/consistency.md). Fires when the discussion is about to produce an artifact (notes file, flashcards).
+See [.claude/rules/consistency.md](../../rules/consistency.md). Fires when the discussion is about to change the chapter.
 
-- **Match the notes-file convention.** Plain Markdown, headings for sub-domains, bullets for facts, code blocks for AWS CLI / policy JSON, "Gotchas" section at the bottom. One file per exam-guide sub-domain, named after the sub-domain (`d3-1-foundation-model-selection.md`, not `bedrock-vs-sagemaker.md` or `session-3.md`).
-- **Match the flashcard convention.** Q/A blocks separated by `---`, fields: `Q:`, `A:`, `Domain:`, `Source:`. Anki-importable plain text. No decorative formatting.
-- **V1 sets the pattern.** If this is the first notes file in `aif-c01/notes/`, the shape you write becomes the convention every future file copies. Posture: most-skimmable Markdown, no YAML frontmatter, no over-engineered structure.
-- **Surface inconsistency.** If two existing notes files have diverged shapes, name the divergence and ask Karthik which is canonical before writing the third.
+- **Match the chapter convention.** Chapter 1 sets the shape, per *Chapter shape* in `docs/plans/006-ai-fde-field-book.md`. New material goes into the chapter's existing sections or its gotchas, in our own words, with every element ID prefixed `chN-`.
+- **Surface inconsistency.** If two chapters have diverged shapes, name the divergence and ask Karthik which is canonical before editing a third.
 
 ### Lens 3 — `planning.md` (session shape)
 
 See [.claude/rules/planning.md](../../rules/planning.md). Fires at the start of the session and at convergence.
 
-- **Frame the session as Goal/Deliverable/Acceptance/Time.** Before discussing, restate what we're doing: *"Goal: understand Bedrock vs SageMaker selection criteria. Deliverable: notes file + 5 flashcards. Acceptance: you can state the trade-off in one sentence and name the trap answer. Time budget: 45 min."* If Karthik proposes a vague session, restate it in this shape before starting.
-- **The notes file is the proof of work.** A session without an artifact didn't happen. If the discussion gets to convergence and Karthik bails before writing — that's fine, but log it in `STUDY_LOG.md` as a session that didn't ship.
+- **Frame the session as Goal/Deliverable/Acceptance/Time.** Before discussing, restate what we're doing: *"Goal: understand Bedrock vs SageMaker selection criteria. Deliverable: the trade-off and its trap folded into the chapter. Acceptance: you can state the trade-off in one sentence and name the trap answer. Time budget: 45 min."* If Karthik proposes a vague session, restate it in this shape before starting.
+- **The chapter update is the proof of work.** A session without an artifact didn't happen. If the discussion gets to convergence and Karthik bails before writing — that's fine, but log it in `STUDY_LOG.md` as a session that didn't ship.
 
 ## Study lenses (fire adaptively)
 
@@ -63,6 +61,8 @@ Process lenses tell you *how* to discuss; study lenses tell you *whose failure m
 - **Real-world family** (Enterprise CEO + Solution Architect, Security Officer, Cloud Engineer, Cybersecurity) — tests whether the knowledge holds up when applied to a real RCM system, a HIPAA audit, an AWS misconfiguration, or an adversary.
 
 **Adaptive firing — judge which lenses matter for the current concept and name which you're firing each round. Fire 2-4 per round, never more.** A pure-recall concept (e.g. "what are Bedrock's content filter categories?") might only need Examiner + Test Writer. A HIPAA-and-architecture concept (e.g. "how would you architect a Bedrock RAG system over PHI?") needs Student + Security Officer + Cloud Engineer + Cybersecurity — drop CEO+SA if procurement isn't the angle. Karthik can challenge the omission — *"why didn't you fire the Security Officer lens?"* — so be explicit about the choice each round.
+
+**The certs are retired (plan 007).** Read "exam" in the lens text below as "a client, reviewer or interviewer probing the idea". A firing condition tied to a cert or its weeks now keys off the chapter's topic: security and governance chapters (11 to 15) fire the HIPAA family, architecture and cloud chapters fire Cloud Engineer.
 
 ### Lens 4 — Examiner
 
@@ -210,14 +210,12 @@ If any gate fails, keep discussing or switch to `--drill`.
 
 When ready:
 
-1. **Propose the file path** based on the cert and sub-domain. Examples:
-   - AIF-C01 concept → `aif-c01/notes/<sub-domain-slug>.md` (e.g. `d3-1-foundation-model-selection.md`)
-   - CHP concept (when week 6+) → `chp/notes/<topic-slug>.md`
-   - MLA-C01 concept (when week 9+) → `mla-c01/notes/<sub-domain-slug>.md`
+1. **Propose where it lands.** Examples:
+   - Field-book concept → the chapter's source file, `fde-field-book/chapters/NN-<slug>.html`, in the section it belongs to. Then rebuild the book (`python3 build.py`, per plan 006).
    - Case-study concept → `docs/drafts/<slug>.md`
-   - **Always confirm the path before writing.** If the parent folder doesn't exist yet, ask whether to create it (e.g. `chp/notes/` doesn't exist until week 6 — don't pre-scaffold).
+   - **Always confirm the location before writing.** Don't create a chapter file for a session that hasn't been drafted yet.
 
-2. **Write the notes file** in this shape (matching `consistency.md`'s notes convention):
+2. **Fold the content in.** In a chapter, add it to the matching section and its gotchas, in the chapter's existing shape. For a case-study draft, use this shape:
 
    ```markdown
    # <Concept name>
@@ -256,23 +254,19 @@ When ready:
    <AWS docs, HHS pages, exam-guide section, video timestamp, practice-exam #. Every non-obvious claim cites something.>
    ```
 
-3. **Optionally append flashcards.** If 3+ atomic facts came up worth memorizing, append them to `aif-c01/flashcards/<domain-slug>.md` (or the equivalent for the active cert). Match the existing flashcard format. Don't generate a flashcard for *every* sentence — only the ones worth Anki-spacing.
-
-4. **Update `STUDY_LOG.md`.** Append (don't overwrite) the current week's entry with the hours spent in this session and the confidence-score delta. If the week doesn't have an entry yet, create one in the existing shape.
+3. **Update `STUDY_LOG.md`.** Append (don't overwrite) the current week's entry with the hours spent in this session and the confidence-score delta. If the week doesn't have an entry yet, create one in the existing shape.
 
 ## Handoff (where the skill stops)
 
 After writing the artifact(s), output exactly this nudge and exit. Don't offer to generate practice questions, don't offer to build a lab, don't volunteer the next concept. Those are separate sessions:
 
 ```
-Notes written to <path>.
-Flashcards appended: <count>  (or "none added — pure-concept session")
+Chapter updated: <path> (book rebuilt)
 STUDY_LOG.md updated: Week <N>, +<X.X> hours, confidence <D> went <before>→<after>
 
 Next moves (separate sessions):
-  1. Generate practice questions on this concept → start a fresh session and ask
-  2. Lab this in an AWS sandbox → fresh session, prompt with the concept + "build a lab"
-  3. Move to the next sub-domain → fresh session, /brainstorm <next topic>
+  1. Build or finish the chapter's lab → fresh session, fde-field-book/labs/chNN/
+  2. Move to the next idea → fresh session, /brainstorm <next topic>
 
 This skill is done.
 ```
@@ -288,8 +282,7 @@ This skill is done.
 
 - **Pure-recall fact lookup.** "What's Claude 3 Sonnet's context window?" — just answer it; don't Socratic-discuss a number you can look up.
 - **You already have notes on this concept** and just want them refined — say so; the skill will read the existing file first and adapt the discussion to the gaps rather than re-deriving from zero.
-- **You're in the middle of a practice exam.** Finish the exam, log the score in `aif-c01/exam-log.md`, *then* brainstorm the concepts you missed.
-- **The concept is from a domain that isn't on the active cert yet.** Don't brainstorm CHP concepts in week 4 — finish AIF-C01 first. Exception: a CHP concept that's load-bearing for the AR Triage case study.
+- **The concept belongs to a later session.** Don't brainstorm Session 12's guardrails during Session 4. Note it for that chapter instead.
 - **You're inside `/loop` or a scheduled run.** Autonomy handed over — don't pause to Socratic-discuss.
 
 ## Anti-patterns (things this skill must NOT do)

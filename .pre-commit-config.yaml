@@ -24,5 +24,35 @@ repos:
     hooks:
       - id: gitleaks
 
+  # Name guard (plan 007, Session 0): blocks client, product and tenant names in
+  # added lines anywhere in the repo, read from the gitignored .name-guard list so
+  # the names never appear in a committed file. The company name is blocked only
+  # under fde-field-book/. A missing or empty list blocks the commit.
+  - repo: local
+    hooks:
+      - id: name-guard
+        name: Block client and company names
+        language: system
+        entry: bash
+        args:
+          - -c
+          - |
+            L=.name-guard
+            pats=$(grep -v '^[[:space:]]*$' "$L" 2>/dev/null)
+            if [ -z "$pats" ]; then
+              echo "name-guard: $L is missing or empty. Create it (it is gitignored) with one blocked name per line."
+              exit 1
+            fi
+            added() { git diff --cached -U0 --no-color -- "$@" | grep '^+' | grep -v '^+++'; }
+            hits=$(added . | grep -iwF -f <(printf '%s\n' "$pats"))
+            book=$(added fde-field-book | grep -iw gravitas)
+            if [ -n "$hits$book" ]; then
+              echo "name-guard: blocked name in staged lines. Use generic wording instead:"
+              printf '%s\n' "$hits" "$book" | grep -v '^$'
+              exit 1
+            fi
+        pass_filenames: false
+        always_run: true
+
 default_install_hook_types: [pre-commit]
 minimum_pre_commit_version: '3.0.0'

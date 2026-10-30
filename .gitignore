@@ -6,6 +6,9 @@
 aws-credentials*
 credentials.json
 
+# Blocked-name list for the name-guard commit hook. Never committed: it holds the names it guards.
+.name-guard
+
 # AWS sandbox local state
 .aws/
 .terraform/

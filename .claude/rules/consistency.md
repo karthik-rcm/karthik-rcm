@@ -1,8 +1,8 @@
 # Match the Existing Pattern
 
-This repo is the public evidence trail for a certification + case-study journey. Its whole value is that someone (recruiter, client, your future self) can skim it and trust what they see. If `aif-c01/notes/d1.md` is terse Markdown bullets and `aif-c01/notes/d3.md` is a giant prose essay, the repo looks half-baked even if the content is solid. Consistency is what makes the evidence trail readable — and therefore credible.
+This repo is the public evidence trail for a study journey: the AI FDE field book and its labs, plus the case study. Its whole value is that someone (recruiter, client, your future self) can skim it and trust what they see. If Chapter 1 has a "Your build" block and Chapter 3 skips it, the repo looks half-baked even if the content is solid. Consistency is what makes the evidence trail readable — and therefore credible.
 
-**Scope: every recurring artifact in this repo.** Notes, flashcards, practice questions, exam-log rows, weekly STUDY_LOG entries, case-study sections, lab write-ups, docs in `docs/`. If something appears more than once, it has a convention, and new instances match it.
+**Scope: every recurring artifact in this repo.** Field-book chapters, lab folders, weekly STUDY_LOG entries, case-study sections, lab write-ups, docs in `docs/`. If something appears more than once, it has a convention, and new instances match it.
 
 ## The conventions (current state)
 
@@ -28,39 +28,13 @@ This repo is the public evidence trail for a certification + case-study journey.
 
 Week 0 is the canonical example. Match it exactly — don't reorder sections, don't rename headers, don't add new top-level sections per week.
 
-### `aif-c01/exam-log.md` rows
+### Field-book chapters (`fde-field-book/chapters/*.html`)
 
-One row per practice attempt, in the existing table. Columns: `#, Date, Source, Score, D1, D2, D3, D4, D5, Time, Notes`. Domain columns are per-domain % (or raw correct/total). "Weak areas" list updated after each attempt.
+Chapter 1 sets the shape: header, sections, interactive pictures, lab spec, "Your build" block. The full contract is *Chapter shape* and *How the book is built* in [`docs/plans/006-ai-fde-field-book.md`](../../docs/plans/006-ai-fde-field-book.md), including the `chN-` ID prefix that keeps chapters from clashing. Chapter 2 onward matches Chapter 1. If a different shape genuinely fits better, **say so before writing** and decide whether to migrate Chapter 1 or record the divergence.
 
-### Notes files (`aif-c01/notes/*.md`)
+### Lab folders (`fde-field-book/labs/chNN/`)
 
-When the first notes file gets written, **its shape becomes the convention.** Posture for v1:
-
-- **Markdown.** Headings for sub-domains, bullets for facts, code blocks for AWS CLI snippets or policy JSON.
-- **Plain language, not lecture notes.** "Bedrock charges per input + output token, prices vary by model" — not a transcribed slide.
-- **One file per exam-guide sub-domain**, named after the sub-domain (e.g. `d3-1-foundation-model-selection.md`), not by date or "session-1.md".
-- **End with a "Gotchas" section** — the 3-5 things AWS phrases in confusing ways, the trap answers in practice exams, the HIPAA-relevant caveats.
-
-When notes file #2 gets written, match #1. If a different shape genuinely fits better, **say so before writing** and decide whether to retro-migrate #1 or document the divergence.
-
-### Flashcards (`aif-c01/flashcards/*.md`)
-
-V1 sets the convention. Proposed shape (subject to first-flashcard review):
-
-```
-Q: <question>
-A: <answer>
-Domain: D<n>
-Source: <exam guide section, video timestamp, practice exam #>
-```
-
-Plain text Markdown, one Q/A per block, separated by `---`. Anki-importable later — keep the format mechanically parseable, no decorative formatting.
-
-### Practice questions (`<cert>/practice-questions/*.md`)
-
-The `/quiz` skill writes these. Naming: `YYYY-MM-DD-<topic-or-domain>.md`. File shape is codified in [.claude/skills/quiz/SKILL.md](../skills/quiz/SKILL.md) — top-level metadata (cert, scope, score, time, pass/fail), per-sub-domain scoring table, weak-areas list, then each question with stem → 4 options → Karthik's answer + correct answer + explanation + notes-file source link.
-
-Match the official exam format of the relevant cert (AIF-C01 / MLA-C01: single-answer MCQ unless multi-answer is required; CHP: occasional "all of the above" / "none of the above"). First file in a `<cert>/practice-questions/` folder sets the in-folder convention; subsequent files match.
+One folder per chapter, numbered to match it. Synthetic data only, our own code, no client or product names. What was built and measured goes in the chapter's "Your build" block, not a separate write-up.
 
 ### Case-study language (`case-study-ar-triage/narrative.md`)
 

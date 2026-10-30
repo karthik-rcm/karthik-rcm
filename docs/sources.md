@@ -1,10 +1,10 @@
 # Authoritative Sources
 
-The canonical list of sources `/aiprof` is allowed to cite from. Every claim in a notes file must trace back to one of these URLs via a verified `WebFetch` — no citation without a fetch, no fetch outside this list (without explicit Karthik approval to add it).
+The canonical list of sources a field-book chapter is allowed to cite from. Every claim in a chapter must trace back to one of these URLs via a verified `WebFetch` — no citation without a fetch, no fetch outside this list (without explicit Karthik approval to add it).
 
 **Why a closed list:** the certification evidence trail is only as credible as its sources. A "professor" skill that confidently cites random AWS blog posts or Medium articles is the failure mode this list prevents. Authoritative sources only.
 
-**How to extend:** when `/aiprof` encounters a concept that genuinely needs a source not on this list, it surfaces the gap (*"I'd like to cite https://example.com/x — should I add it to docs/sources.md?"*) and waits for approval. Don't silently cite off-list URLs.
+**How to extend:** when a chapter genuinely needs a source not on this list, Claude surfaces the gap (*"I'd like to cite https://example.com/x — should I add it to docs/sources.md?"*) and waits for approval. Don't silently cite off-list URLs.
 
 ---
 
@@ -170,7 +170,7 @@ These PDFs are for reading/learning, like YouTube below — not citeable in a no
 
 ## NOT on this list (deliberately)
 
-These sources are excluded — `/aiprof` must not cite from them, and surfacing them to add later is fine, but they're off by default:
+These sources are excluded — chapters must not cite from them, and surfacing them to add later is fine, but they're off by default:
 
 - Medium articles, Dev.to posts, Towards Data Science — quality is uneven, not authoritative for a credential evidence trail.
 - AWS Marketing pages (`aws.amazon.com/<service>/` without `/docs/`) — sales copy, not technical truth. **Exception:** AWS-authored `/what-is/` concept explainers are citeable for AIF-C01 foundational vocabulary — see the "AWS concept explainers" subsection above. The exclusion still applies to product/sales pages.
